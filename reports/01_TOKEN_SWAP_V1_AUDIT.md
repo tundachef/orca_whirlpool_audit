@@ -118,8 +118,8 @@ v2.0.0 `production` allowlist is ConstantProduct + ConstantPrice only. ELF still
 | Harness | Status | Location |
 |---------|--------|----------|
 | Modern SPL curve/proptest (`cargo test --features fuzz --lib curve`) | **65 passed**, 0 failed | `fuzz/token-swap-v1/logs/proptest_curve.txt` |
-| Orca-oriented pure math honggfuzz (CP + Stable D + fees) | **Clean sample:** 210 664 iters, **0 crashes**; 30 min campaign running | `fuzz/token-swap-v1/math_fuzz/` |
-| Stock SPL `token-swap-instructions` honggfuzz | Queued | `audit_work/sources/spl-lib/token-swap/program/fuzz` |
+| Orca-oriented pure math honggfuzz (CP + Stable D + fees) | **DONE:** ~30 min campaign, **0 crashes** (plus earlier 210 664-iter clean sample) | `fuzz/token-swap-v1/math_fuzz/` |
+| Stock SPL `token-swap-instructions` honggfuzz | **DONE:** **398 176 iters / 597s / 0 crashes** / 301 new units | `fuzz/token-swap-v1/logs/spl_ix_fuzz_run.txt` |
 
 **Invariants under test:** CP output ≤ reserve; k non-decrease when products fit u128; Stable D finite / non-explode; fee den=0 fail-closed for amount>0; fee ≤ amount when fraction would pass `Fees::validate`.
 
@@ -141,8 +141,8 @@ If account data were corrupt / packing bypassed validation, `amount * num / den`
 
 | Residual | Status |
 |----------|--------|
-| Math fuzz long campaign (~30 min) | **DONE — no crashes** (corpus ~538+; clean through full timeout window) |
-| Stock SPL `token-swap-instructions` honggfuzz | Running (honggfuzz 0.5.55); early sample no crashes |
+| Math fuzz long campaign (~30 min) | **DONE — 0 crashes** |
+| Stock SPL `token-swap-instructions` honggfuzz | **DONE — 398 176 iters, 0 crashes** |
 | `amp=0` LP path | **Confirmed** on lineage (OV1-M02) |
 | `InitOffsetCurve` string | Unresolved fork/debug name — Low residual |
 | Live pool `SwapV1` layout spot-check | Open (optional) |
