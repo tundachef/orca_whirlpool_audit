@@ -36,20 +36,41 @@
 
 ---
 
-## 3. Planned review (after V1 DoD)
+## 3. Production constraints (ELF-confirmed)
 
-1. ELF/ix layout vs V1 — confirm same tag set; note any new ixs.  
-2. Production constraints / embedded owner key probe.  
-3. Reuse V1 math fuzz; add any V2-only surfaces.  
-4. **Upgrade authority residual** (`23zF9…`) as High trust finding (shared with Aquafarm).  
-5. Write findings OV2-* and commit.
+Unlike V1, V2 **embeds** the modern SPL `production` fee constant blob at file offset `184384`:
+
+| Field | Value |
+|-------|--------|
+| trade | **0 / 10000** |
+| owner_trade | **5 / 10000** |
+| owner_withdraw | **0 / 0** |
+| host | **20 / 100** (20% of owner trade fee) |
+
+**Fee-account owner key (ASCII in ELF):**  
+`2YM8LrJGRtsDcWeqsjX2EQwJfhArxyDdtDzgt7vrwwbV`
+
+Constraint error strings present (“fee does not match the program owner”, “curve type is not supported by the program owner”). Production allowlist historically is **ConstantProduct + ConstantPrice only** — Stable/Offset remain in the binary (swap existing pools) but **new** Stable/Offset inits should fail constraints if `SWAP_CONSTRAINTS` is `Some`.
+
+**Contrast with V1:** V1 has **no** `u64 10000` and **no** fee blob → unconstrained. V2 is **constrained**.
 
 ---
 
-## 4. Preliminary findings (identity-only)
+## 4. Findings
 
 | ID | Sev | Title |
 |----|-----|-------|
-| OV2-I01 | **High** (trust) | Live upgrade authority `23zF9…` — code can change anytime |
-| OV2-I02 | Info | Same curve family as V1 including Stable/Offset |
+| OV2-I01 | **High** (trust) | Live upgrade authority `23zF9…` — bytecode mutable |
+| OV2-M01 | **Medium** (positive vs V1) | Production fee + owner constraints embedded — blocks free-form malicious fee/curve init |
+| OV2-M02 | Info | Same curve calculators as V1 still linked (Stable/Offset code present) |
+| OV2-M03 | Info | Fee owner `2YM8Lr…` must own pool fee token accounts at init — map to known Orca treasury if possible |
 | OV2-I03 | Info | Dump matches chain — G1 held |
+
+---
+
+## 5. Fuzz / next
+
+- Reuse V1 math fuzz (same curve family).  
+- Confirm `validate_fees` is exact-equality (older) vs minimum-numerator (newer) against this binary’s behavior if needed.  
+- Map `2YM8Lr…` on-chain (owner of fee ATAs / known Orca wallets).  
+- Then close #2 and proceed to Aquafarm.

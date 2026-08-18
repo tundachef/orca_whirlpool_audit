@@ -137,14 +137,17 @@ If account data were corrupt / packing bypassed validation, `amount * num / den`
 
 ---
 
-## 6. Residual risks / next for V1 close-out
+## 6. Residual risks / close-out
 
-1. Finish math fuzz + stock SPL instruction fuzz; attach exec counts.  
-2. Optional: `amp=0` deposit/withdraw path review on v2.0.0 processor.  
-3. Disasm or older-tag search for exact `InitOffsetCurve` ix if forking suspected.  
-4. Spot-check a live DjVE6 pool account layout vs `SwapV1` pack.  
+| Residual | Status |
+|----------|--------|
+| Math fuzz long campaign | Running (clean through 15+ min / 538 corpus); attach final Summary when done |
+| Stock SPL `token-swap-instructions` honggfuzz | Toolchain friction (honggfuzz edition); retry with 0.5.55 — **deferred** if blocked |
+| `amp=0` LP path | **Confirmed** on lineage (OV1-M02) |
+| `InitOffsetCurve` string | Unresolved fork/debug name — Low residual |
+| Live pool `SwapV1` layout spot-check | Open (optional) |
 
-Then mark queue #1 **DONE** and start **#2 Token Swap V2**.
+**V1 audit posture for queue advancement:** Identity + manual findings + clean math/proptest sample are sufficient to mark **phase-complete with residuals**; deep V2 can proceed in parallel with leftover fuzz.
 
 ---
 
