@@ -1,0 +1,15 @@
+[package]
+name = "xorca-math-fuzz"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+honggfuzz = "=0.5.55"
+arbitrary = { version = "1", features = ["derive"] }
+
+[[bin]]
+name = "xo_math"
+path = "src/main.rs"
+test = false
+doc = false
