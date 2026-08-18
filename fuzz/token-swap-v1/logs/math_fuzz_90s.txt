@@ -1,0 +1,1315 @@
+   Compiling proc-macro2 v1.0.107
+   Compiling unicode-ident v1.0.24
+   Compiling quote v1.0.47
+   Compiling honggfuzz v0.5.62
+   Compiling semver v1.0.28
+   Compiling lazy_static v1.5.0
+   Compiling rustc_version v0.4.1
+   Compiling syn v2.0.119
+   Compiling derive_arbitrary v1.4.2
+   Compiling arbitrary v1.4.2
+   Compiling orca-v1-math-fuzz v0.1.0 (/home/ziion/Documents/solanaProtocols/orca-whirlpool/fuzz/token-swap-v1/math_fuzz)
+    Finished `release` profile [optimized] target(s) in 34.15s
+Persistent signature found in 'hfuzz_target/x86_64-unknown-linux-gnu/release/v1_math'. Enabling persistent fuzzing mode
+Start time:'2026-08-18.06.22.45' bin:'hfuzz_target/x86_64-unknown-linux-gnu/release/v1_math', input:'hfuzz_workspace/v1_math/input', output:'hfuzz_workspace/v1_math/input', persistent:true, stdin:false, mutation_rate:5, timeout:1, max_runs:0, threads:4, minimize:false, git_commit:01713bdad7307acea887517f2468b4a9961f9806
+[2J[500B[2026-08-18T06:22:45-0700][W][10398] input_getDirStatsAndRewind():117 No usable files in the input directory 'hfuzz_workspace/v1_math/input'
+Parsed hfuzz_target/x86_64-unknown-linux-gnu/release/v1_math: found 4508 32-bit and 3311 64-bit interesting values
+[2026-08-18T06:22:45-0700][W][10398] sanitizers_AddFlag():67 The 'ASAN_OPTIONS' envar is already set. Not overriding it!
+Entering phase 1/3: Dry Run
+Launched new fuzzing thread, no. #0
+Launched new fuzzing thread, no. #1
+[2026-08-18T06:22:45-0700][W][10954] input_getNext():132 No useful files in the input directory
+Entering phase 2/3: Switching to the Feedback Driven Mode
+Launched new fuzzing thread, no. #3
+Launched new fuzzing thread, no. #2
+[2026-08-18T06:22:45-0700][W][10957] input_getNext():132 No useful files in the input directory
+[2026-08-18T06:22:45-0700][W][10956] input_getNext():132 No useful files in the input directory
+[2026-08-18T06:22:45-0700][W][10955] input_getNext():132 No useful files in the input directory
+Entering phase 3/3: Dynamic Main (Feedback Driven Mode)
+Persistent mode: Launched new persistent pid=10960
+Sz:3 Tm:59,309us (i/b/h/e/p/c) New:0/0/0/25/1/733, Cur:0/0/0/25/1/733
+Sz:7 Tm:69us (i/b/h/e/p/c) New:0/0/0/8/0/154, Cur:0/0/0/33/1/887
+Sz:3 Tm:36us (i/b/h/e/p/c) New:0/0/0/0/0/17, Cur:0/0/0/33/1/904
+Sz:3 Tm:29us (i/b/h/e/p/c) New:0/0/0/0/0/13, Cur:0/0/0/33/1/917
+Sz:3 Tm:22us (i/b/h/e/p/c) New:0/0/0/0/0/7, Cur:0/0/0/33/1/924
+Sz:13 Tm:27us (i/b/h/e/p/c) New:0/0/0/0/0/8, Cur:0/0/0/33/1/932
+Sz:3 Tm:40us (i/b/h/e/p/c) New:0/0/0/0/0/5, Cur:0/0/0/33/1/937
+Sz:23 Tm:34us (i/b/h/e/p/c) New:0/0/0/2/0/9, Cur:0/0/0/35/1/946
+Sz:3 Tm:25us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/35/1/947
+Sz:17 Tm:573us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/35/1/949
+Persistent mode: Launched new persistent pid=10961
+Persistent mode: Launched new persistent pid=10959
+Sz:4 Tm:50,273us (i/b/h/e/p/c) New:0/0/0/0/0/10, Cur:0/0/0/35/1/959
+Persistent mode: Launched new persistent pid=10962
+Sz:3 Tm:24,906us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/35/1/961
+Sz:7 Tm:26,586us (i/b/h/e/p/c) New:0/0/0/12/2/465, Cur:0/0/0/47/3/1426
+Sz:5 Tm:14,790us (i/b/h/e/p/c) New:0/0/0/0/0/6, Cur:0/0/0/47/3/1432
+Sz:23 Tm:21,910us (i/b/h/e/p/c) New:0/0/0/2/0/0, Cur:0/0/0/49/3/1432
+Sz:18 Tm:13,340us (i/b/h/e/p/c) New:0/0/0/2/0/1, Cur:0/0/0/51/3/1433
+Sz:23 Tm:31,563us (i/b/h/e/p/c) New:0/0/0/0/0/6, Cur:0/0/0/51/3/1439
+Sz:23 Tm:10,396us (i/b/h/e/p/c) New:0/0/0/1/0/3, Cur:0/0/0/52/3/1442
+Sz:27 Tm:9,258us (i/b/h/e/p/c) New:0/0/0/0/0/7, Cur:0/0/0/52/3/1449
+Sz:5 Tm:22us (i/b/h/e/p/c) New:0/0/0/0/0/3, Cur:0/0/0/52/3/1452
+Sz:7 Tm:13us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/52/3/1453
+Sz:12 Tm:16us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/52/3/1454
+Sz:16 Tm:23us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/52/3/1455
+Sz:6 Tm:34us (i/b/h/e/p/c) New:0/0/0/0/0/3, Cur:0/0/0/52/3/1458
+Sz:8 Tm:34us (i/b/h/e/p/c) New:0/0/0/0/0/5, Cur:0/0/0/52/3/1463
+Sz:5 Tm:18us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/52/3/1464
+Sz:4 Tm:30us (i/b/h/e/p/c) New:0/0/0/0/0/4, Cur:0/0/0/52/3/1468
+Sz:16 Tm:16us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/52/3/1470
+Sz:5 Tm:29us (i/b/h/e/p/c) New:0/0/0/0/0/6, Cur:0/0/0/52/3/1476
+Sz:6 Tm:35us (i/b/h/e/p/c) New:0/0/0/0/0/3, Cur:0/0/0/52/3/1479
+Sz:45 Tm:31us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/52/3/1480
+Sz:3 Tm:23us (i/b/h/e/p/c) New:0/0/0/0/0/3, Cur:0/0/0/52/3/1483
+Sz:11 Tm:42us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/52/3/1485
+Sz:14 Tm:19us (i/b/h/e/p/c) New:0/0/0/1/0/34, Cur:0/0/0/53/3/1519
+Sz:10 Tm:32us (i/b/h/e/p/c) New:0/0/0/0/0/6, Cur:0/0/0/53/3/1525
+Sz:5 Tm:26us (i/b/h/e/p/c) New:0/0/0/0/0/4, Cur:0/0/0/53/3/1529
+Sz:28 Tm:51,753us (i/b/h/e/p/c) New:0/0/0/2/0/0, Cur:0/0/0/55/3/1529
+Sz:7 Tm:19us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/55/3/1530
+Sz:3 Tm:27us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/55/3/1532
+Sz:11 Tm:26us (i/b/h/e/p/c) New:0/0/0/0/0/6, Cur:0/0/0/55/3/1538
+Sz:5 Tm:33us (i/b/h/e/p/c) New:0/0/0/0/0/22, Cur:0/0/0/55/3/1560
+Sz:3 Tm:19us (i/b/h/e/p/c) New:0/0/0/0/0/3, Cur:0/0/0/55/3/1563
+Sz:6 Tm:24us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/55/3/1565
+Sz:18 Tm:19us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/55/3/1566
+Sz:5 Tm:23us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/55/3/1568
+Sz:4 Tm:22us (i/b/h/e/p/c) New:0/0/0/0/0/11, Cur:0/0/0/55/3/1579
+Sz:6 Tm:15us (i/b/h/e/p/c) New:0/0/0/0/0/12, Cur:0/0/0/55/3/1591
+Sz:10 Tm:30us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/55/3/1592
+Sz:207 Tm:66us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/55/3/1594
+Sz:11 Tm:16us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/55/3/1595
+Sz:11 Tm:20us (i/b/h/e/p/c) New:0/0/0/0/0/7, Cur:0/0/0/55/3/1602
+Sz:12 Tm:31us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/55/3/1603
+Sz:10 Tm:19us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/55/3/1604
+Sz:11 Tm:42us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/55/3/1606
+Crash: saved as 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz'
+Sz:34 Tm:26,658us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/55/3/1608
+Sz:6 Tm:14us (i/b/h/e/p/c) New:0/0/0/0/0/3, Cur:0/0/0/55/3/1611
+Sz:9 Tm:23us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/55/3/1612
+Sz:6 Tm:19us (i/b/h/e/p/c) New:0/0/0/0/0/3, Cur:0/0/0/55/3/1615
+Sz:5 Tm:25us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/55/3/1616
+Sz:9 Tm:26us (i/b/h/e/p/c) New:0/0/0/0/0/6, Cur:0/0/0/55/3/1622
+Sz:11 Tm:16us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/55/3/1623
+Sz:23 Tm:20us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/55/3/1625
+Sz:1009 Tm:91us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/55/3/1626
+Sz:17 Tm:26us (i/b/h/e/p/c) New:0/0/0/0/0/4, Cur:0/0/0/55/3/1630
+Sz:21 Tm:23us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/55/3/1632
+Sz:14 Tm:14us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/55/3/1633
+Sz:27 Tm:88,663us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/55/3/1635
+[2026-08-18T06:22:45-0700][W][10954] arch_checkWait():237 Persistent mode: pid=10959 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:7 Tm:46,337us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/55/3/1636
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Sz:16 Tm:334,031us (i/b/h/e/p/c) New:0/0/0/3/0/56, Cur:0/0/0/58/3/1692
+[2026-08-18T06:22:45-0700][W][10956] arch_checkWait():237 Persistent mode: pid=10960 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:23 Tm:78,418us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/58/3/1694
+Persistent mode: Launched new persistent pid=10963
+Sz:9 Tm:182,398us (i/b/h/e/p/c) New:0/0/0/0/0/8, Cur:0/0/0/58/3/1702
+Persistent mode: Launched new persistent pid=10964
+Sz:25 Tm:17,090us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/58/3/1704
+Sz:21 Tm:13us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/58/3/1706
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:46-0700][W][10955] arch_checkWait():237 Persistent mode: pid=10962 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:15 Tm:425,903us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/58/3/1708
+Persistent mode: Launched new persistent pid=10966
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:46-0700][W][10957] arch_checkWait():237 Persistent mode: pid=10961 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=10967
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:46-0700][W][10954] arch_checkWait():237 Persistent mode: pid=10963 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:15 Tm:566,428us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/58/3/1709
+Persistent mode: Launched new persistent pid=10968
+Sz:28 Tm:65,306us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/58/3/1711
+Sz:7 Tm:176,584us (i/b/h/e/p/c) New:0/0/0/0/0/8, Cur:0/0/0/58/3/1719
+Sz:6 Tm:348us (i/b/h/e/p/c) New:0/0/0/0/0/3, Cur:0/0/0/58/3/1722
+Sz:15 Tm:532us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/58/3/1723
+Sz:30 Tm:4,839us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/58/3/1725
+Sz:23 Tm:29us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/58/3/1727
+Sz:31 Tm:13,641us (i/b/h/e/p/c) New:0/0/0/1/0/0, Cur:0/0/0/59/3/1727
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:46-0700][W][10956] arch_checkWait():237 Persistent mode: pid=10964 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:20 Tm:71,390us (i/b/h/e/p/c) New:0/0/0/1/0/0, Cur:0/0/0/60/3/1727
+Persistent mode: Launched new persistent pid=10969
+Sz:37 Tm:18us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/60/3/1728
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:46-0700][W][10954] arch_checkWait():237 Persistent mode: pid=10968 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:15 Tm:105,364us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/60/3/1730
+Sz:14 Tm:334,993us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/60/3/1732
+Sz:8 Tm:70,269us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/60/3/1733
+Persistent mode: Launched new persistent pid=10970
+Sz:7 Tm:186,248us (i/b/h/e/p/c) New:0/0/0/0/0/8, Cur:0/0/0/60/3/1741
+Sz:8 Tm:9,116us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/60/3/1742
+Sz:23 Tm:9,083us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/60/3/1743
+Sz:11 Tm:20,291us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/60/3/1744
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Sz:4 Tm:11us (i/b/h/e/p/c) New:0/0/0/0/0/4, Cur:0/0/0/60/3/1748
+[2026-08-18T06:22:47-0700][W][10957] arch_checkWait():237 Persistent mode: pid=10967 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=10971
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:47-0700][W][10954] arch_checkWait():237 Persistent mode: pid=10970 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:20 Tm:247,657us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/60/3/1749
+Persistent mode: Launched new persistent pid=10972
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:47-0700][W][10954] arch_checkWait():237 Persistent mode: pid=10972 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:4 Tm:189us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/60/3/1751
+Persistent mode: Launched new persistent pid=10973
+Sz:11 Tm:72,184us (i/b/h/e/p/c) New:0/0/0/0/0/8, Cur:0/0/0/60/3/1759
+Sz:23 Tm:18us (i/b/h/e/p/c) New:0/0/0/0/0/4, Cur:0/0/0/60/3/1763
+Sz:34 Tm:51us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/60/3/1764
+Sz:12 Tm:20us (i/b/h/e/p/c) New:0/0/0/0/0/6, Cur:0/0/0/60/3/1770
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Sz:13 Tm:74us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/60/3/1772
+Sz:16 Tm:22us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/60/3/1773
+[2026-08-18T06:22:47-0700][W][10954] arch_checkWait():237 Persistent mode: pid=10973 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=10974
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:48-0700][W][10956] arch_checkWait():237 Persistent mode: pid=10969 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=10975
+Sz:23 Tm:50,467us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/60/3/1774
+Sz:23 Tm:15us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/60/3/1775
+Sz:13 Tm:15us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/60/3/1776
+Sz:17 Tm:27us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/60/3/1778
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:48-0700][W][10957] arch_checkWait():237 Persistent mode: pid=10971 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:26 Tm:158,739us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/60/3/1779
+Sz:10 Tm:17us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/60/3/1780
+Sz:22 Tm:29us (i/b/h/e/p/c) New:0/0/0/2/0/4, Cur:0/0/0/62/3/1784
+Sz:10 Tm:16us (i/b/h/e/p/c) New:0/0/0/0/0/5, Cur:0/0/0/62/3/1789
+Persistent mode: Launched new persistent pid=10976
+[2026-08-18T06:22:48-0700][W][10955] arch_checkWait():237 Persistent mode: pid=10966 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:26 Tm:19us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/62/3/1791
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=10977
+[2026-08-18T06:22:48-0700][W][10954] arch_checkWait():237 Persistent mode: pid=10974 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:15 Tm:497,933us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/62/3/1792
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:49-0700][W][10956] arch_checkWait():237 Persistent mode: pid=10975 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:15 Tm:601,357us (i/b/h/e/p/c) New:0/0/0/0/0/3, Cur:0/0/0/62/3/1795
+Persistent mode: Launched new persistent pid=10978
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:49-0700][W][10957] arch_checkWait():237 Persistent mode: pid=10976 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=10979
+Persistent mode: Launched new persistent pid=10980
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:49-0700][W][10954] arch_checkWait():237 Persistent mode: pid=10978 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=10981
+Sz:14 Tm:35us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/62/3/1796
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:49-0700][W][10956] arch_checkWait():237 Persistent mode: pid=10979 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=10982
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:49-0700][W][10957] arch_checkWait():237 Persistent mode: pid=10980 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=10983
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:49-0700][W][10954] arch_checkWait():237 Persistent mode: pid=10981 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=10984
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:50-0700][W][10956] arch_checkWait():237 Persistent mode: pid=10982 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:18 Tm:140,428us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/62/3/1797
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=10985
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:50-0700][W][10957] arch_checkWait():237 Persistent mode: pid=10983 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:22:50-0700][W][10954] arch_checkWait():237 Persistent mode: pid=10984 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=10986
+Sz:23 Tm:38us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/62/3/1799
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=10988
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:50-0700][W][10955] arch_checkWait():237 Persistent mode: pid=10977 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:22:50-0700][W][10957] arch_checkWait():237 Persistent mode: pid=10986 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=10989
+Sz:28 Tm:491,591us (i/b/h/e/p/c) New:0/0/0/0/0/8, Cur:0/0/0/62/3/1807
+Persistent mode: Launched new persistent pid=10990
+Sz:3563 Tm:147us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/62/3/1809
+Sz:8192 Tm:76us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/62/3/1810
+Sz:12 Tm:31us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/62/3/1811
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:51-0700][W][10955] arch_checkWait():237 Persistent mode: pid=10989 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:22:51-0700][W][10957] arch_checkWait():237 Persistent mode: pid=10990 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:274 Tm:166,891us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/62/3/1812
+Persistent mode: Launched new persistent pid=10991
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:51-0700][W][10956] arch_checkWait():237 Persistent mode: pid=10985 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=10992
+Persistent mode: Launched new persistent pid=10993
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:51-0700][W][10954] arch_checkWait():237 Persistent mode: pid=10988 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=10994
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:51-0700][W][10956] arch_checkWait():237 Persistent mode: pid=10993 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=10995
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:52-0700][W][10956] arch_checkWait():237 Persistent mode: pid=10995 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=10996
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:52-0700][W][10957] arch_checkWait():237 Persistent mode: pid=10992 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:48 Tm:312,835us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/62/3/1813
+Persistent mode: Launched new persistent pid=10998
+Sz:17 Tm:16us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/62/3/1814
+Sz:17 Tm:27,490us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/62/3/1815
+Sz:13 Tm:13,245us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/62/3/1816
+Sz:13 Tm:16us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/62/3/1817
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:53-0700][W][10956] arch_checkWait():237 Persistent mode: pid=10996 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11000
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:53-0700][W][10957] arch_checkWait():237 Persistent mode: pid=10998 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:24 Tm:87,723us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/62/3/1818
+Persistent mode: Launched new persistent pid=11001
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:53-0700][W][10954] arch_checkWait():237 Persistent mode: pid=10994 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:58 Tm:92,055us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/62/3/1819
+Persistent mode: Launched new persistent pid=11002
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:53-0700][W][10955] arch_checkWait():237 Persistent mode: pid=10991 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11003
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Sz:209 Tm:370us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/62/3/1821
+[2026-08-18T06:22:53-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11001 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:15 Tm:410,652us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/62/3/1822
+Persistent mode: Launched new persistent pid=11004
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:54-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11003 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11005
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:54-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11004 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:22:54-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11002 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11007
+Persistent mode: Launched new persistent pid=11006
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:54-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11005 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:22:54-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11000 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11008
+Sz:17 Tm:256,757us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/62/3/1823
+Persistent mode: Launched new persistent pid=11009
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:54-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11006 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11010
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:55-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11008 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:55-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11009 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11011
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:55-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11007 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11012
+Persistent mode: Launched new persistent pid=11013
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:55-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11012 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11014
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:56-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11010 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:22:56-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11011 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11015
+Persistent mode: Launched new persistent pid=11016
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:56-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11013 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:8186 Tm:474,477us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/62/3/1825
+[2026-08-18T06:22:56-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11014 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11018
+Persistent mode: Launched new persistent pid=11017
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:56-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11015 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11019
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:56-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11018 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11020
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:57-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11016 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11021
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:57-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11021 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11022
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:57-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11019 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11023
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:57-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11017 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11024
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Sz:14 Tm:2,451us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/62/3/1826
+[2026-08-18T06:22:57-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11023 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:34 Tm:59,069us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/62/3/1827
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:57-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11024 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11025
+Persistent mode: Launched new persistent pid=11026
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:57-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11025 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11027
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:57-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11027 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11028
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:57-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11026 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=11030
+[2026-08-18T06:22:57-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11022 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11031
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:57-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11020 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11032
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:57-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11031 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11033
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:57-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11030 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11034
+[2026-08-18T06:22:57-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11028 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11035
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:58-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11032 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11036
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:58-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11034 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:8192 Tm:12,528us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/62/3/1828
+[2026-08-18T06:22:58-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11033 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11037
+Sz:14 Tm:69,449us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/62/3/1829
+Persistent mode: Launched new persistent pid=11038
+Sz:8183 Tm:260us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/62/3/1830
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:58-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11035 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:58-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11037 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11039
+[2026-08-18T06:22:58-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11036 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11040
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=11041
+[2026-08-18T06:22:58-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11038 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11042
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:58-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11042 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:25 Tm:44us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/62/3/1832
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=11043
+[2026-08-18T06:22:58-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11039 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=11044
+[2026-08-18T06:22:58-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11040 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11045
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:58-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11041 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:58-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11045 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11046
+Persistent mode: Launched new persistent pid=11047
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:59-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11044 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:19 Tm:163,305us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/62/3/1833
+Persistent mode: Launched new persistent pid=11048
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:59-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11047 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11049
+[2026-08-18T06:22:59-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11043 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11050
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:59-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11049 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11051
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:59-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11046 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:22 Tm:18us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/62/3/1835
+Sz:22 Tm:19us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/62/3/1836
+Sz:22 Tm:24us (i/b/h/e/p/c) New:0/0/0/1/0/0, Cur:0/0/0/63/3/1836
+Sz:22 Tm:17us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/63/3/1838
+Sz:22 Tm:21us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/63/3/1839
+Persistent mode: Launched new persistent pid=11052
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:59-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11051 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11053
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:59-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11052 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11054
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:59-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11048 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:22:59-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11050 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11055
+Persistent mode: Launched new persistent pid=11056
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:00-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11053 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:22 Tm:5,839us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/63/3/1840
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=11057
+[2026-08-18T06:23:00-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11054 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11058
+Sz:22 Tm:27,648us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/63/3/1841
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:00-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11057 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:00-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11055 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11059
+Sz:22 Tm:133,724us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/63/3/1843
+Persistent mode: Launched new persistent pid=11060
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:00-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11059 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11061
+Sz:22 Tm:29us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/63/3/1844
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:01-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11060 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11062
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:01-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11056 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11064
+[2026-08-18T06:23:01-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11061 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=11065
+[2026-08-18T06:23:01-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11062 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11066
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:01-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11064 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11067
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:01-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11066 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:46 Tm:324,914us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/63/3/1845
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:02-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11065 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11068
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=11069
+[2026-08-18T06:23:02-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11058 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:22 Tm:128us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/63/3/1846
+Sz:22 Tm:18us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/63/3/1847
+Persistent mode: Launched new persistent pid=11070
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:02-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11069 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=11071
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:02-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11067 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:02-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11068 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11072
+Persistent mode: Launched new persistent pid=11073
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:02-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11070 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11075
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:02-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11071 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11076
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:02-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11073 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11077
+Sz:14 Tm:98,185us (i/b/h/e/p/c) New:0/0/0/0/0/8, Cur:0/0/0/63/3/1855
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:03-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11075 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11078
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:03-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11076 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11079
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:03-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11078 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:03-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11077 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11080
+[2026-08-18T06:23:03-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11079 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11081
+Persistent mode: Launched new persistent pid=11082
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:03-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11082 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11083
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:03-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11072 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11087
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:04-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11080 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:04-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11081 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11089
+Persistent mode: Launched new persistent pid=11088
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:04-0700][W][10956] subproc_checkTimeLimit():532 pid=11083 took too much time (limit 1 s). Killing it with SIGKILL
+[2026-08-18T06:23:04-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11083 exited with status: SIGNALED, signal: 9 (Killed)
+Sz:104 Tm:1,090,834us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/63/3/1856
+Persistent mode: Launched new persistent pid=11090
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:04-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11087 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11091
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:05-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11088 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11092
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:05-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11089 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:05-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11090 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11094
+Persistent mode: Launched new persistent pid=11093
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:05-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11094 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11095
+Sz:14 Tm:5,938us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/63/3/1857
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:05-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11095 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11096
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:05-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11092 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:05-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11091 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:05-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11096 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11097
+Persistent mode: Launched new persistent pid=11098
+Persistent mode: Launched new persistent pid=11099
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:06-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11093 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11101
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:06-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11097 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11102
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:06-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11099 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:06-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11101 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:19 Tm:127,398us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/63/3/1858
+Persistent mode: Launched new persistent pid=11103
+Persistent mode: Launched new persistent pid=11104
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:06-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11104 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11105
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:07-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11098 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=11106
+[2026-08-18T06:23:07-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11103 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11107
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:07-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11107 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:07-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11102 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11108
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=11109
+[2026-08-18T06:23:07-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11105 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11110
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:07-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11106 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11111
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:07-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11109 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11112
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:07-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11108 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:07-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11110 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11113
+Persistent mode: Launched new persistent pid=11114
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:07-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11111 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11115
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:08-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11112 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:08-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11113 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11116
+Persistent mode: Launched new persistent pid=11117
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:08-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11117 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11118
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:08-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11114 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11119
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:08-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11119 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11120
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:08-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11120 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11121
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:08-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11116 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:08-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11115 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=11122
+Persistent mode: Launched new persistent pid=11123
+[2026-08-18T06:23:08-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11118 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:08-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11121 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11124
+Persistent mode: Launched new persistent pid=11125
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:09-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11125 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11126
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:09-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11124 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=11127
+[2026-08-18T06:23:09-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11122 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11128
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:09-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11123 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11129
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:09-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11126 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=11130
+[2026-08-18T06:23:09-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11127 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=11131
+[2026-08-18T06:23:09-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11128 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11132
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:09-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11129 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11133
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:09-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11131 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:09-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11130 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11134
+Persistent mode: Launched new persistent pid=11135
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:09-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11132 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11136
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:09-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11134 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11137
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:09-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11133 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11138
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:09-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11137 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11139
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:09-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11135 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11140
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:10-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11139 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11141
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:10-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11138 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11142
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:10-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11141 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:10-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11136 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11143
+Persistent mode: Launched new persistent pid=11144
+Sz:14 Tm:59,110us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/63/3/1859
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:10-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11143 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11145
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:10-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11144 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11146
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:11-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11142 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11149
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:11-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11145 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11150
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:11-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11140 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11151
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:11-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11150 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11152
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:11-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11146 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11153
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:11-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11149 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11154
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:11-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11152 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11155
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:11-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11153 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11156
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:11-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11155 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11157
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:11-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11154 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11158
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:11-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11151 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11159
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:11-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11157 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11160
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:12-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11158 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:12-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11156 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11161
+Persistent mode: Launched new persistent pid=11162
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:12-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11160 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:12-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11159 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11163
+Persistent mode: Launched new persistent pid=11164
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:12-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11163 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11165
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:12-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11161 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11166
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:12-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11165 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:12-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11164 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:12-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11162 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11167
+Persistent mode: Launched new persistent pid=11168
+Persistent mode: Launched new persistent pid=11169
+Sz:17 Tm:3,974us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/63/3/1860
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:12-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11168 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11170
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:12-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11167 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11171
+Sz:16 Tm:137,713us (i/b/h/e/p/c) New:0/0/0/0/0/8, Cur:0/0/0/63/3/1868
+Sz:22 Tm:19us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/63/3/1869
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:13-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11166 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:13-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11171 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11172
+Persistent mode: Launched new persistent pid=11173
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:13-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11170 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11174
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:13-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11172 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11175
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:13-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11175 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11176
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:13-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11169 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11177
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:13-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11173 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11178
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:13-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11174 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11179
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:13-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11178 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:13-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11176 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11180
+Persistent mode: Launched new persistent pid=11181
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:14-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11177 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11182
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:14-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11179 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11183
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:14-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11180 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:14-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11181 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11184
+Persistent mode: Launched new persistent pid=11185
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:14-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11182 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:14-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11183 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11186
+Persistent mode: Launched new persistent pid=11187
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:15-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11185 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11188
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:15-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11184 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11189
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:15-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11187 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11190
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:15-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11188 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11191
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:16-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11190 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:16-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11189 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11192
+Persistent mode: Launched new persistent pid=11193
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:16-0700][W][10957] subproc_checkTimeLimit():532 pid=11186 took too much time (limit 1 s). Killing it with SIGKILL
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:16-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11186 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:16-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11192 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11194
+Persistent mode: Launched new persistent pid=11195
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:16-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11195 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:16-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11193 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11196
+Persistent mode: Launched new persistent pid=11197
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:17-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11191 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:17-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11196 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11198
+Persistent mode: Launched new persistent pid=11199
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:17-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11194 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:17-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11197 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11200
+Persistent mode: Launched new persistent pid=11201
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:17-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11198 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11202
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:17-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11202 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11203
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:17-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11201 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11204
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:18-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11200 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:18-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11204 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11205
+Persistent mode: Launched new persistent pid=11206
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:18-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11203 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11207
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:18-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11199 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:18-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11206 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11208
+Persistent mode: Launched new persistent pid=11209
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:18-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11205 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11210
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:18-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11207 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11211
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:18-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11209 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11212
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:18-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11208 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11213
+[2026-08-18T06:23:19-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11211 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11214
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:19-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11214 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:19-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11210 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11215
+Persistent mode: Launched new persistent pid=11216
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:19-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11212 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11217
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:19-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11216 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:20-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11217 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11218
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=11219
+[2026-08-18T06:23:20-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11215 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11220
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:20-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11218 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11221
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:20-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11219 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11222
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:20-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11220 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11223
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:20-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11221 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:20-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11213 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11224
+Persistent mode: Launched new persistent pid=11225
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:21-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11223 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11226
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:21-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11222 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11227
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:21-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11226 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11228
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:21-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11224 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:21-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11228 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11229
+Persistent mode: Launched new persistent pid=11230
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:21-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11225 exited with status: SIGNALED, signal: 6 (Aborted)
+Sz:24 Tm:383,652us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/63/3/1870
+Persistent mode: Launched new persistent pid=11231
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:22-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11230 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11235
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:22-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11229 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:22-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11227 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11236
+Persistent mode: Launched new persistent pid=11237
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:22-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11236 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11240
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:22-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11235 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11242
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:23-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11231 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:23-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11237 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11243
+Persistent mode: Launched new persistent pid=11245
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:23-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11245 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11247
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:23-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11242 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11248
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:23-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11248 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11249
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:23-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11240 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11250
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:23-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11249 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11251
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:24-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11247 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11252
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:24-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11251 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11253
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:24-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11243 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11254
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:24-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11250 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:24-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11252 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11255
+Persistent mode: Launched new persistent pid=11256
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:24-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11253 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11257
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:24-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11257 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11258
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:25-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11256 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11259
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:25-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11255 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11260
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:25-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11254 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:25-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11258 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11261
+Persistent mode: Launched new persistent pid=11262
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:25-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11260 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11263
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:26-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11262 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11264
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:26-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11263 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11265
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:26-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11265 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11266
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:26-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11261 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11267
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:26-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11264 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11268
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:26-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11266 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11269
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:27-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11268 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:27-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11267 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11271
+Persistent mode: Launched new persistent pid=11270
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:27-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11269 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11272
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:27-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11270 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11273
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:27-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11259 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11274
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:27-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11271 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11275
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:28-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11272 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:28-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11274 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11276
+Persistent mode: Launched new persistent pid=11277
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:28-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11275 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:28-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11277 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11278
+Persistent mode: Launched new persistent pid=11279
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:28-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11273 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11280
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:28-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11280 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11281
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:28-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11281 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11282
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:29-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11279 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11283
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:29-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11278 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11284
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:29-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11283 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:29-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11284 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:29-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11276 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11285
+Persistent mode: Launched new persistent pid=11286
+Persistent mode: Launched new persistent pid=11287
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:29-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11282 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11288
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:29-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11286 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11289
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:29-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11285 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11290
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:29-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11288 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=11291
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:29-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11287 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:29-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11290 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11293
+Persistent mode: Launched new persistent pid=11292
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:30-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11289 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11294
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:30-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11291 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11295
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:30-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11292 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11296
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:30-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11295 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11297
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:30-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11296 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11298
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:31-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11297 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11299
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:31-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11298 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11300
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:31-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11294 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11301
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:31-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11299 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=11302
+[2026-08-18T06:23:31-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11293 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=11303
+[2026-08-18T06:23:31-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11300 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11304
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:31-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11304 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11305
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:32-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11302 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11306
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:32-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11305 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:32-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11303 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11307
+Persistent mode: Launched new persistent pid=11308
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:32-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11301 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11309
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:32-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11306 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11310
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:32-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11308 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11311
+[2026-08-18T06:23:32-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11307 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=11312
+[2026-08-18T06:23:32-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11309 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11313
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:32-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11311 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11314
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:32-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11314 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11315
+[2026-08-18T06:23:32-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11310 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11316
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:33-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11312 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:33-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11316 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11317
+Persistent mode: Launched new persistent pid=11318
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:33-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11313 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11319
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:33-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11317 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:33-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11315 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11320
+Persistent mode: Launched new persistent pid=11321
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:33-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11320 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11322
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:33-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11319 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:33-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11318 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:33-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11321 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11323
+Persistent mode: Launched new persistent pid=11324
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:34-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11322 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11325
+Persistent mode: Launched new persistent pid=11326
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:34-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11325 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:34-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11323 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11328
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Persistent mode: Launched new persistent pid=11327
+[2026-08-18T06:23:34-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11324 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11329
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:34-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11329 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11330
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:34-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11326 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11331
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:34-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11327 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:34-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11330 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11332
+Persistent mode: Launched new persistent pid=11333
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:35-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11332 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11334
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:35-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11333 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11336
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:35-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11328 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11337
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:35-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11331 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11338
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:35-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11334 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:35-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11336 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11339
+Persistent mode: Launched new persistent pid=11340
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:36-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11338 exited with status: SIGNALED, signal: 6 (Aborted)
+[2026-08-18T06:23:36-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11337 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11342
+Persistent mode: Launched new persistent pid=11341
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:36-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11340 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11343
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:37-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11339 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11344
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:37-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11343 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11345
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:37-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11342 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11346
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:37-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11344 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11347
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:37-0700][W][10957] arch_checkWait():237 Persistent mode: pid=11345 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11348
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:38-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11341 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11349
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:38-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11347 exited with status: SIGNALED, signal: 6 (Aborted)
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:39-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11349 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11350
+Persistent mode: Launched new persistent pid=11351
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:39-0700][W][10956] arch_checkWait():237 Persistent mode: pid=11346 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11352
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:39-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11350 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11353
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:39-0700][W][10955] arch_checkWait():237 Persistent mode: pid=11351 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11354
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+[2026-08-18T06:23:39-0700][W][10954] arch_checkWait():237 Persistent mode: pid=11353 exited with status: SIGNALED, signal: 6 (Aborted)
+Persistent mode: Launched new persistent pid=11355
+Signal 15 (Terminated) received, terminating
+Terminating thread no. #0, left: 3
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Terminating thread no. #2, left: 2
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Terminating thread no. #3, left: 1
+Crash (dup): 'hfuzz_workspace/v1_math/SIGABRT.PC.7ffff7e35ccc.STACK.1a4868e0ed.CODE.-6.ADDR.0.INSTR.mov____%eax,%ebp.fuzz' already exists, skipping
+Terminating thread no. #1, left: 0
+Summary iterations:13311 time:55 speed:242 crashes_count:374 timeout_count:2 new_units_added:158 slowest_unit_ms:1104 guard_nb:158 branch_coverage_percent:39 peak_rss_mb:329
+[r[500B

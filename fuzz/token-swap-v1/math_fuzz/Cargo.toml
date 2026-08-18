@@ -1,0 +1,21 @@
+[package]
+name = "orca-v1-math-fuzz"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+honggfuzz = "0.5"
+arbitrary = { version = "1", features = ["derive"] }
+
+[[bin]]
+name = "v1_math"
+path = "src/main.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "repro"
+path = "src/repro.rs"
+test = false
+doc = false

@@ -6,3 +6,10 @@ sources/
 *.swp
 .idea/
 .vscode/
+
+# Fuzz build artifacts / corpus (keep source harness + logs summaries)
+fuzz/**/hfuzz_workspace/
+fuzz/**/hfuzz_target/
+fuzz/**/target/
+fuzz/**/onchain_v1.so
+sources/spl-token-swap-legacy/
