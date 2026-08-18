@@ -141,8 +141,8 @@ If account data were corrupt / packing bypassed validation, `amount * num / den`
 
 | Residual | Status |
 |----------|--------|
-| Math fuzz long campaign | Running (clean through 15+ min / 538 corpus); attach final Summary when done |
-| Stock SPL `token-swap-instructions` honggfuzz | Toolchain friction (honggfuzz edition); retry with 0.5.55 — **deferred** if blocked |
+| Math fuzz long campaign (~30 min) | **DONE — no crashes** (corpus ~538+; clean through full timeout window) |
+| Stock SPL `token-swap-instructions` honggfuzz | Running (honggfuzz 0.5.55); early sample no crashes |
 | `amp=0` LP path | **Confirmed** on lineage (OV1-M02) |
 | `InitOffsetCurve` string | Unresolved fork/debug name — Low residual |
 | Live pool `SwapV1` layout spot-check | Open (optional) |
