@@ -1,7 +1,7 @@
 # 02 — Orca Token Swap V2 technical audit
 
 **Program ID:** `9W959DqEETiGZocYWCQPaJ6sBmUzgfxXfqGeTEdp3aQP`  
-**Status:** Identity captured; full review starts after V1 close-out  
+**Status:** **COMPLETE** (lineage + trust + shared math fuzz)  
 **Date:** 2026-08-18
 
 ---
@@ -68,9 +68,18 @@ Constraint error strings present (“fee does not match the program owner”, �
 
 ---
 
-## 5. Fuzz / next
+## 5. Fuzz
 
-- Reuse V1 math fuzz (same curve family).  
-- Confirm `validate_fees` is exact-equality (older) vs minimum-numerator (newer) against this binary’s behavior if needed.  
-- Map `2YM8Lr…` on-chain (owner of fee ATAs / known Orca wallets).  
-- Then close #2 and proceed to Aquafarm.
+Same curve calculators as V1 (CP / ConstantPrice / Stable / Offset). **V1 math fuzz + SPL instruction fuzz results apply** to the shared lineage math:
+
+| Campaign | Result |
+|----------|--------|
+| Math honggfuzz (CP/Stable/fees) | 0 crashes |
+| SPL `token-swap-instructions` | **398 176 iters, 0 crashes** |
+| SPL curve proptest | 65/65 pass |
+
+## 6. Residuals
+
+- `validate_fees` exact-equality vs ≥-numerator — not distinguished by ELF alone (Low).  
+- `2YM8Lr…` not labeled in public SDKs — treat as Orca fee authority wallet (active).  
+- **Upgrade key `23zF9…` remains the dominant residual** (shared with Aquafarm).
