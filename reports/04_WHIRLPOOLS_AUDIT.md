@@ -67,8 +67,9 @@ Pinocchio entry for hot liquidity paths under `src/pinocchio/instructions/`.
 | **OW-I02** | Info | `increase_liquidity_by_token_amounts_v2` floors liquidity; token_max enforced; no donation path found |
 | **OW-I03** | Info | Lock model: freeze-based; no decrease/close bypass while frozen |
 | **OW-I04** | Info | `ADMINS` only gates `initialize_config` + `set_config_feature_flag` |
-| **OW-I05** | Info | Token-2022: TransferFeeConfig always allowed; swap_v2 adjusts exact-in/out via `swap_with_transfer_fee_extension` |
-| **OW-I06** | Info | NonTransferable pool mints always rejected; unknown TLV extensions rejected (`is_supported_token_mint`) |
+| **OW-I05** | Info | Official TokenExtensions docs lag code (ScaledUiAmount ungated; Pausable badge-gated). Cite `util/v2/token.rs` |
+| **OW-I06** | Info | `collect_*_v2` does not TransferFee-gross-up owed amounts — collectors of fee-on-transfer mints receive excluded amounts (UX, not solvency) |
+| **OW-I07** | Info | NonTransferable / unknown TLV always rejected; TransferFeeConfig always allowed; swap_v2 fee accounting coherent |
 
 ---
 

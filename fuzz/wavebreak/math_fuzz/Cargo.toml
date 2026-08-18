@@ -1,0 +1,16 @@
+[package]
+name = "wavebreak-math-fuzz"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+honggfuzz = "=0.5.55"
+arbitrary = { version = "1", features = ["derive"] }
+orca_wavebreak = "2.0.0"
+
+[[bin]]
+name = "wb_math"
+path = "src/main.rs"
+test = false
+doc = false
