@@ -1,0 +1,15 @@
+Whirlpools Immutable audit inputs
+=================================
+Program ID: iwhrLHdsgrvmnwU8GF2FSmyabSMjfHwFGJAX2ufJ3ZN
+ProgramData: 7j2FgCQqJKs89k8w8dFdXrkeu8TT1EPJwkz5zuRUj1uo
+Upgrade authority: none (burned)
+Last deployed slot: 420510431
+Data Length: 1538016 bytes
+ELF: immutable.so
+SHA256: 20e890cefe5d1e3a6a0bd2a9fded3d405c511e13a5d1af3d4b59d78438f70230
+Config: 8pm8erUsaMpmZ47LttHAPgnDx7xGZUvxY4q47vTCs5Nj
+  fee_authority / collect_protocol_fees_authority / reward_emissions_super_authority:
+    r21Gamwd9DtyjHeGywsneoQYR39C1VDwrw7tWxHAwh6
+  default_protocol_fee_rate: 1300
+Source lineage: origin/immutable/78a6ff3 ≈ e5f089b + declare_id + admin trim
+Mutable counterpart pin: e5f089bc5c49b01f5c8abb43c78457ab6c440568 (Osec)
