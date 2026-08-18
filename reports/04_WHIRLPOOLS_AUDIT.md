@@ -44,13 +44,32 @@ Liquidity / swap: `swap`, `swap_v2`, `two_hop_swap(_v2)`, `increase/decrease_liq
 
 Pinocchio entry for hot liquidity paths under `src/pinocchio/instructions/`.
 
-## 5. Fuzz / next
+## 5. Findings (manual + explore @ e5f089b)
 
-- [x] `cargo test --lib` at pin  
-- [ ] Dedicated cargo-fuzz/honggfuzz on `swap_math` / token amounts (beyond unit proptest)  
-- [ ] Fold prior OR-H01 into confirmed/rejected table  
-- [ ] Deep review Token-2022 transfer-fee + remaining accounts on `swap_v2`  
+| ID | Sev | Title |
+|----|-----|-------|
+| **OW-H01** | **High** (trust) | `GwH3…` is upgrade authority **and** config `fee_authority` (privilege concentration) |
+| **OW-M01** | **Medium** (ops) | Default Cargo features omit `mainnet` → localnet `ADMINS` baked in if someone deploys without `--features mainnet` (footgun; live build OK via Osec) |
+| **OW-M02** | **Medium** (ops/trust) | `set_fee_authority` / collect-protocol / reward-super: single-step rotate to `UncheckedAccount` — lockout or rug if key compromised/mis-set |
+| **OW-M03** | **Medium** (trust) | TokenBadge whitelist enables TransferHook / PermanentDelegate mints — badge authority compromise ⇒ vault-hostile extensions |
+| **OW-L01** | Low | `transfer_locked_position` uses `has_one = position` only (not PDA seeds); sole init is PDA today |
+| **OW-L02** | Low | Pinocchio TransferHook CPI uses caller metas vs SPL `add_extra_accounts_for_execute_cpi` on Anchor path |
+| **OW-I01** | Info | Slippage / zero-amount / exact-out partial-fill / vault binding on swap(_v2) look sound |
+| **OW-I02** | Info | `increase_liquidity_by_token_amounts_v2` floors liquidity; token_max enforced; no donation path found |
+| **OW-I03** | Info | Lock model: freeze-based; no decrease/close bypass while frozen |
+| **OW-I04** | Info | `ADMINS` only gates `initialize_config` + `set_config_feature_flag` |
 
-## 6. Non-code carry-forward
+## 6. Tests / fuzz
+
+| Campaign | Result |
+|----------|--------|
+| `cargo test --lib` @ `e5f089b` | **654 passed, 0 failed** (incl. swap integration + transfer-fee fuzz_tests) |
+| Dedicated cargo-fuzz on swap_math | Pending (unit proptest already present) |
+
+## 7. Prior OR-H01
+
+Fold from `reports/orca_whirlpools.md` / `04_OR_H01_*` — treat as **prior residual** pending re-validation against this pin (not re-opened here without PoC replay).
+
+## 8. Non-code carry-forward
 
 - NC-02 GwH3 concentration; NC-05.1 Sec3 PDF gap vs Pinocchio/`e5f089b`  
