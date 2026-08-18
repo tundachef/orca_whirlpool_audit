@@ -1,0 +1,8 @@
+# Full git clones live locally; re-clone via scripts/clone-sources.sh
+sources/
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
