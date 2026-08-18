@@ -1,27 +1,36 @@
-# Orca Whirlpool — Technical Audit Workspace
+# Orca — Technical Audit Workspace
 
-Root folder for the Orca deep-dive (oldest → newest programs). Prior findings copied under `reports/`. Full git histories of public Orca sources under `sources/`.
+Deep dive of Orca mainnet programs (oldest → newest). Artifacts live in this git repo under `orca-whirlpool/`.
+
+## Start here
+
+1. **`reports/08_ORCA_QUEUE_CLOSEOUT.md`** — executive board + fuzz summary (**queue complete**)  
+2. **`reports/ORCA_CONTRACT_INVENTORY.md`** — program IDs / authorities / timeline  
+3. **`notes/03_AUDIT_QUEUE.md`** — ordered DoD status  
+4. Per-program: `reports/01_*` … `reports/07_*`
 
 ## Layout
 
 | Path | Contents |
 |------|----------|
-| `reports/` | Prior inventory + Whirlpool/OR-H01 notes moved from `audit_work/findings/` |
-| `sources/` | Full clones: `whirlpools`, `xorca`, `typescript-sdk`, `aquafarm-sdk` |
-| `audits-external/` | Third-party PDF audits shipped in Orca repos |
-| `notes/` | Commit flags, open-source scope map, **non-code technical audit** |
-
-## Start here
-
-1. `reports/ORCA_CONTRACT_INVENTORY.md` — all mainnet program IDs / authorities / timeline  
-2. `notes/00_OPEN_SOURCE_SCOPE.md` — what we are reviewing (and what is closed-source)  
-3. `notes/01_GIT_HISTORY_FLAGGED.md` — whirlpools history from first commit; flagged commits  
-4. `notes/02_NON_CODE_TECHNICAL_AUDIT.md` — authorities, verify, license, config, ops (**this phase**)
+| `reports/` | Inventory, per-program audits, OR-H01 notes, close-out |
+| `notes/` | Scope, git flags, non-code audit, queue, residual battery |
+| `fuzz/` | Honggfuzz harnesses, dumps, logs |
+| `sources/` | Full clones (gitignored): whirlpools, xorca, SDKs, SPL lineage |
+| `audits-external/` | Third-party PDFs |
 
 ## Audit phases
 
 | Phase | Focus | Status |
 |-------|--------|--------|
-| Inventory | Addresses, authorities, deploys | Done |
-| Non-code technical | Trust, upgrade, verify, license, config, docs claims | **In progress** |
-| Code (oldest first) | V1 → V2 → Aquafarm → Whirlpool → Wavebreak → xORCA → Immutable | Pending |
+| Inventory | Addresses, authorities, deploys | **Done** |
+| Non-code technical | Trust, upgrade, verify, license, config | **Done** |
+| Code + fuzz (oldest→newest) | V1 → V2 → Aquafarm → Whirlpool → Wavebreak → xORCA → Immutable | **Done** |
+| Close-out + residual battery | Executive board + bounded residual verification | **Done** |
+
+## Highest residuals (not Critical drains)
+
+- **OW-H02** — DynamicTickArray unsafe cast (Critical theft debunked; UB residual)
+- **GwH3…** privilege concentration (mutable Whirlpool / Wavebreak / xORCA)
+- **WB-H02** — Wavebreak graduation reward/fee vs quote (client-implied)
+- **XO-M01/M02** — xORCA cool-down bounds / residual dust inflation

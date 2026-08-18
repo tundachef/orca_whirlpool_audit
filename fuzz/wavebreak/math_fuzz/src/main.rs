@@ -9,9 +9,10 @@ use orca_wavebreak::curve::{
 use orca_wavebreak::fee::BPS_DENOMINATOR;
 use orca_wavebreak::price::{base_to_quote_amount, quote_to_base_amount};
 use orca_wavebreak::quote::{
-    exact_in_buy_quote, exact_in_sell_quote, exact_out_buy_quote, exact_out_sell_quote,
+    close_quote, exact_in_buy_quote, exact_in_sell_quote, exact_out_buy_quote, exact_out_sell_quote,
     graduate_quote,
 };
+use orca_wavebreak::token::quote_graduation_amount;
 
 #[derive(Debug, Arbitrary)]
 enum Action {
@@ -53,6 +54,29 @@ enum Action {
         creator_reward: u64,
         graduation_reward: u64,
         quote_protocol_fee_bps: u16,
+    },
+    /// WB-H02 residual: rewards + fee must not silently wrap; expect Err when insolvent.
+    GraduationInsolvency {
+        quote_amount: u64,
+        creator_reward: u64,
+        graduation_reward: u64,
+        quote_protocol_fee_bps: u16,
+    },
+    CloseQuoteStress {
+        start_price: u128,
+        end_price: u128,
+        cp0: u16,
+        cp1: u16,
+        cp2: u16,
+        cp3: u16,
+        base_amount: u64,
+        graduation_target: u64,
+        creator_reward: u64,
+        graduation_reward: u64,
+        preminted_supply: u64,
+        quote_protocol_fee_bps: u16,
+        base_protocol_fee_bps: u16,
+        base_allocation_bps: u16,
     },
 }
 
@@ -219,6 +243,68 @@ fn main() {
                         creator_reward,
                         graduation_reward,
                         fee,
+                    );
+                }
+                Action::GraduationInsolvency {
+                    quote_amount,
+                    creator_reward,
+                    graduation_reward,
+                    quote_protocol_fee_bps,
+                } => {
+                    let quote_amount = quote_amount.max(MIN_GRADUATION_TARGET);
+                    let fee = clamp_bps(quote_protocol_fee_bps);
+                    // Must not panic. If creator+grad rewards alone exceed quote, must Err.
+                    let r = quote_graduation_amount(
+                        quote_amount,
+                        fee,
+                        creator_reward,
+                        graduation_reward,
+                    );
+                    if creator_reward
+                        .saturating_add(graduation_reward)
+                        > quote_amount
+                    {
+                        assert!(r.is_err(), "expected Err when rewards exceed quote");
+                    }
+                }
+                Action::CloseQuoteStress {
+                    start_price,
+                    end_price,
+                    cp0,
+                    cp1,
+                    cp2,
+                    cp3,
+                    base_amount,
+                    graduation_target,
+                    creator_reward,
+                    graduation_reward,
+                    preminted_supply,
+                    quote_protocol_fee_bps,
+                    base_protocol_fee_bps,
+                    base_allocation_bps,
+                } => {
+                    let Some(curve) = make_curve(start_price, end_price, cp0, cp1, cp2, cp3) else {
+                        return;
+                    };
+                    let grad = clamp_grad(graduation_target);
+                    let qfee = clamp_bps(quote_protocol_fee_bps);
+                    let bfee = clamp_bps(base_protocol_fee_bps);
+                    // allocation 0 or base fee 10000 should Err (÷0 paths), not panic.
+                    let alloc = if base_allocation_bps % 17 == 0 {
+                        0
+                    } else {
+                        clamp_bps(base_allocation_bps).max(1)
+                    };
+                    let _ = close_quote(
+                        curve,
+                        base_amount,
+                        grad,
+                        creator_reward,
+                        graduation_reward,
+                        preminted_supply,
+                        qfee,
+                        bfee,
+                        alloc,
                     );
                 }
             }

@@ -198,20 +198,25 @@ Other org repos (`utl-*`, tutorials, CPI samples) are SDKs/tooling, not addition
 
 ---
 
-## 6. Suggested audit sequence & scope notes
+## 6. Audit sequence — **COMPLETE** (2026-08-18)
 
-1. **Token Swap V1** — immutable; dump-based / SPL-swap diff; residual TVL only.  
-2. **Token Swap V2** — dump + SPL lineage; same legacy authority `23zF9…`; first ProgramData mid-2021.  
-3. **Aquafarm** — no public program source; reverse from dump + SDK ix layouts; authority still live.  
-4. **Whirlpools mutable** — full source in monorepo; **already partially audited** (OR-H01 etc.); verify bytecode vs tip / verifiable build; frequent 2025–2026 upgrades.  
-5. **Wavebreak** — closed source; client crate + on-chain IDL/binary; first deploys Jul 2025.  
-6. **xORCA** — public `orca-so/xorca`; smaller surface.  
-7. **Whirlpools Immutable** — authority burned; treat as frozen fork of Whirlpool logic + config isolation.
+| # | Program | Result |
+|---|---------|--------|
+| 1 | Token Swap V1 | COMPLETE — see `01_TOKEN_SWAP_V1_AUDIT.md` |
+| 2 | Token Swap V2 | COMPLETE — see `02_TOKEN_SWAP_V2_AUDIT.md` |
+| 3 | Aquafarm | PHASE-COMPLETE — see `03_AQUAFARM_AUDIT.md` |
+| 4 | Whirlpools mutable @ `e5f089b` | PHASE-COMPLETE — `04_WHIRLPOOLS_AUDIT.md` + math fuzz 1.31M/0 |
+| 5 | Wavebreak | PHASE-COMPLETE — `05_WAVEBREAK_AUDIT.md` + client math fuzz 805k/0 |
+| 6 | xORCA | PHASE-COMPLETE — `06_XORCA_AUDIT.md` + math fuzz 765k/0 |
+| 7 | Whirlpools Immutable | PHASE-COMPLETE — `07_WHIRLPOOLS_IMMUTABLE_AUDIT.md`; auth burned |
+
+Executive board: **`08_ORCA_QUEUE_CLOSEOUT.md`**.
 
 ---
 
 ## 7. Gaps / follow-ups
 
+- [x] Ordered code+fuzz pass for all seven program IDs  
 - [ ] Paginate ProgramData signature history for upgrade cadence charts (Whirlpool has frequent upgrades).  
 - [ ] Resolve Squads/multisig member set behind `GwH3Hiv5…` and `23zF9…`.  
 - [ ] Obtain Wavebreak program source or verified build artifact (repo appears private).  

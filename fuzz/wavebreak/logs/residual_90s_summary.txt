@@ -1,0 +1,2 @@
+9:Start time:'2026-08-18.12.14.13' bin:'hfuzz_target/x86_64-unknown-linux-gnu/release/wb_math', input:'hfuzz_workspace/wb_math/input', output:'hfuzz_workspace/wb_math/input', persistent:true, stdin:false, mutation_rate:5, timeout:2, max_runs:0, threads:4, minimize:false, git_commit:380cf14962c64e3fa902d9442b6c6513869116ed
+613:Summary iterations:557098 time:91 speed:6121 crashes_count:0 timeout_count:0 new_units_added:254 slowest_unit_ms:83 guard_nb:16183 branch_coverage_percent:1 peak_rss_mb:41

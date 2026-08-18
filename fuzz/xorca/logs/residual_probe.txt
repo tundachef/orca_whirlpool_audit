@@ -1,0 +1,25 @@
+   Compiling xorca-residual-probe v0.1.0 (/home/ziion/Documents/solanaProtocols/orca-whirlpool/fuzz/xorca/residual_probe)
+    Finished `release` profile [optimized] target(s) in 1.09s
+     Running `target/release/xo_residual`
+=== XO-M02 residual dust / zero-share after donation ===
+ init_o=1 init_s=1 donor=1000000000 victim=1000000 -> ZERO_SHARES (InsufficientStakeAmount on-chain)
+ init_o=1 init_s=1 donor=1000000000000 victim=1000000 -> ZERO_SHARES (InsufficientStakeAmount on-chain)
+ init_o=1 init_s=1 donor=500000000000000 victim=1000000 -> ZERO_SHARES (InsufficientStakeAmount on-chain)
+ init_o=100 init_s=100 donor=1000000000000 victim=10000000 -> ZERO_SHARES (InsufficientStakeAmount on-chain)
+ init_o=1000000 init_s=1000000 donor=1000000000000 victim=1000000 -> shares=1 redeem≈999901
+
+=== XO-M03 non_escrowed==0 special case under-mint ===
+ supply=1 special_1to1=1000000 virtual_fair≈1010000 ratio_fair/special=1
+ supply=100 special_1to1=1000000 virtual_fair≈2000000 ratio_fair/special=2
+ supply=1000000 special_1to1=1000000 virtual_fair≈10001000000 ratio_fair/special=10001
+ supply=1000000000 special_1to1=1000000 virtual_fair≈10000001000000 ratio_fair/special=10000001
+
+=== XO-M01 cool_down bounds (code review) ===
+ initialize/set: reject only if cool_down_period_s < 0
+ allowed: 0 (instant withdraw for NEW unstakes), i64::MAX (overflow risk on add)
+ existing PendingWithdraw timestamps are snapshotted — not rewritten on set
+
+=== Summary ===
+donation zero-share cases: 4/5
+XO-M02 residual CONFIRMED for stake << donation/virtual_offset
+XO-M03 special-case under-mint CONFIRMED when vault fully escrowed
