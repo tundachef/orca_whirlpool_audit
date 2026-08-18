@@ -78,7 +78,11 @@ From `token-swap-v2.0.0` `instruction.rs` + ELF:
     }
 ```
 
-**Impact:** `amp = 0` (and other pathological amps) pass validation. Swap math uses `leverage = amp * N_COINS`; zero leverage causes `checked_*` to fail closed on swap paths (returns `None` → calculation error), but pools can still be **initialized** and may strand LP depending on deposit/withdraw paths. **Needs fuzz + path confirmation** (in progress).
+**Impact (path-confirmed on lineage):** `amp = 0` passes validation at init.  
+- **Swap:** `leverage = amp * N_COINS` → 0; subsequent `checked_div(leverage)` fails → swap returns calculation error (**fail closed**).  
+- **Deposit/withdraw (all / single):** StableCurve’s `pool_tokens_to_trading_tokens` / `trading_tokens_to_pool_tokens` are **proportional helpers that ignore `amp`**. So an amp=0 “stable” pool can still accept/return LP proportionally while **swaps never work**.  
+
+**Class:** grief / honeypot pool (UI risk), not direct vault theft. Reinforces OV1-M01 (permissionless init).
 
 ### OV1-M03 — Fee “minimum 1 token” when nonzero fee rounds to 0 — **Info / design**
 
