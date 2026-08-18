@@ -61,11 +61,14 @@ From `token-swap-v2.0.0` `instruction.rs` + ELF:
 
 ## 4. Manual review findings
 
-### OV1-M01 — Permissionless pool init if unconstrained build — **Medium (residual)**
+### OV1-M01 — Permissionless pool init (unconstrained build) — **Medium**
 
-**Evidence:** No embedded fee-owner pubkey / `SWAP_PROGRAM_OWNER_FEE_ADDRESS` string in ELF. Constraint *error* strings exist (enum always compiled), but without `production` + owner key, `SWAP_CONSTRAINTS` is `None` and init skips owner/fee/curve allowlist (`processor.rs` ~282–292 in v2.0.0).
+**Evidence:**
+- No embedded fee-owner pubkey / `SWAP_PROGRAM_OWNER_FEE_ADDRESS` string in ELF.
+- No little-endian `u64` value `10000` anywhere in the binary — so the classic `production` fee blob `(25,10000,5,10000,0,0,20,100)` is **not** present as static data.
+- Constraint *error* strings exist (enum always compiled), but without `production` + owner key, `SWAP_CONSTRAINTS` is `None` and init skips owner/fee/curve allowlist (`processor.rs` ~282–292 in v2.0.0).
 
-**Impact:** Anyone can create pools with attacker-chosen fees/curves (honeypot / malicious fee configs). Classic SPL Token-Swap class risk. Live residual depends on whether UI routes only through known pools.
+**Impact:** Anyone can create pools with attacker-chosen fees/curves (honeypot / malicious fee configs / amp=0 “stable”). Classic SPL Token-Swap class risk. Live residual depends on whether UI routes only through known pools.
 
 **Mitigation on-chain:** none (immutable). Off-chain: UI/token-list allowlists.
 
