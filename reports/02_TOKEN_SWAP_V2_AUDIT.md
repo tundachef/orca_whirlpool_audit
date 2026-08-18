@@ -63,7 +63,7 @@ Constraint error strings present (“fee does not match the program owner”, �
 | OV2-I01 | **High** (trust) | Live upgrade authority `23zF9…` — bytecode mutable |
 | OV2-M01 | **Medium** (positive vs V1) | Production fee + owner constraints embedded — blocks free-form malicious fee/curve init |
 | OV2-M02 | Info | Same curve calculators as V1 still linked (Stable/Offset code present) |
-| OV2-M03 | Info | Fee owner `2YM8Lr…` must own pool fee token accounts at init — map to known Orca treasury if possible |
+| OV2-M03 | Info | Fee owner `2YM8LrJGRtsDcWeqsjX2EQwJfhArxyDdtDzgt7vrwwbV` — system account (~0.39 SOL), **not** named in public SDKs; still receiving txs (active). Must own each pool’s fee token account at init. |
 | OV2-I03 | Info | Dump matches chain — G1 held |
 
 ---
