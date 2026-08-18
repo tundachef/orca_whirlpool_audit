@@ -111,17 +111,18 @@ v2.0.0 `production` allowlist is ConstantProduct + ConstantPrice only. ELF still
 | Harness | Status | Location |
 |---------|--------|----------|
 | Modern SPL curve/proptest (`cargo test --features fuzz --lib curve`) | **65 passed**, 0 failed | `fuzz/token-swap-v1/logs/proptest_curve.txt` |
-| Orca-oriented pure math honggfuzz (CP + Stable D + fees) | **Running** (see triage) | `fuzz/token-swap-v1/math_fuzz/` |
+| Orca-oriented pure math honggfuzz (CP + Stable D + fees) | **Clean sample:** 210 664 iters, **0 crashes**; 30 min campaign running | `fuzz/token-swap-v1/math_fuzz/` |
 | Stock SPL `token-swap-instructions` honggfuzz | Queued | `audit_work/sources/spl-lib/token-swap/program/fuzz` |
 
-**Invariants under test:** CP output ≤ reserve; k non-collapse beyond dust; Stable D finite / non-explode; fee den=0 fail-closed; fee ≤ amount **when fraction would pass `Fees::validate`**.
+**Invariants under test:** CP output ≤ reserve; k non-decrease when products fit u128; Stable D finite / non-explode; fee den=0 fail-closed for amount>0; fee ≤ amount when fraction would pass `Fees::validate`.
 
-### 5.1 Crash triage (first 90s campaign)
+### 5.1 Crash triage (harness FPs — not on-chain bugs)
 
-- **SIGABRT** on input `Fee { amount: large, trade_num: 34926, trade_den: 11400 }` → harness asserted `fee ≤ amount`.
-- **Root cause:** harness allowed `num > den` (>100% fee). On-chain `Fees::validate_fraction` **rejects** `numerator >= denominator` at `Initialize`.
-- **Classification:** **false positive** (invalid fee config unreachable via normal init).
-- Harness updated to only enforce `fee ≤ amount` for fractions that pass init validation; campaign restarted.
+1. Fee `num > den` → harness FP; on-chain rejected at init.  
+2. CP k-check used `saturating_mul` then `+` → **u128 overflow in harness** on max inputs.  
+3. `amount==0 && den==0 && num!=0` → `calc_fee` returns `Some(0)` before den check; init still rejects.  
+
+After fixes: **0 crashes** in clean 90s run (~210k iters, ~44% branch coverage).
 
 ### OV1-M09 — `calculate_fee` alone does not cap fee ≤ amount — **Info**
 
