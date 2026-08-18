@@ -90,14 +90,16 @@ fn main() {
                     if let Some(dy) = cp_swap(x, y, dx) {
                         // output cannot exceed pool
                         assert!(dy <= y, "CP dy>y x={x} y={y} dx={dx} dy={dy}");
-                        // with fees removed later; conservation: x' * y' >= x * y roughly for zero fee
                         let xp = x.saturating_add(dx);
                         let yp = y.saturating_sub(dy);
-                        // constant product non-decrease (floor division may leave dust)
-                        assert!(
-                            xp.saturating_mul(yp) + xp + yp >= x.saturating_mul(y),
-                            "CP k decreased more than dust allows"
-                        );
+                        // k non-decrease: only when products fit in u128 (else skip —
+                        // saturating_mul + add overflows and false-crashes the harness).
+                        if let (Some(k0), Some(k1)) = (x.checked_mul(y), xp.checked_mul(yp)) {
+                            assert!(
+                                k1 >= k0,
+                                "CP k decreased x={x} y={y} dx={dx} dy={dy} k0={k0} k1={k1}"
+                            );
+                        }
                     }
                 }
                 Action::StableD { a, b, amp } => {
@@ -126,7 +128,9 @@ fn main() {
 
                     let r1 = calc_fee(amount, fees.trade_num as u128, fees.trade_den as u128);
                     let r2 = calc_fee(amount, fees.owner_num as u128, fees.owner_den as u128);
-                    if fees.trade_den == 0 && fees.trade_num != 0 {
+                    // amount==0 short-circuits calc_fee to Some(0) before den check.
+                    // On-chain, den=0 && num!=0 fails Fees::validate at init anyway.
+                    if amount > 0 && fees.trade_den == 0 && fees.trade_num != 0 {
                         assert!(r1.is_none(), "fee with den=0 must fail closed");
                     }
                     // Only assert fee ≤ amount for fractions that could pass init validation.
@@ -146,15 +150,10 @@ fn main() {
                             );
                         }
                     }
-                    if trade_ok && owner_ok {
-                        if let (Some(f1), Some(f2)) = (r1, r2) {
-                            assert!(
-                                f1.saturating_add(f2) <= amount.saturating_add(amount / 2).saturating_add(2)
-                                    || amount == 0,
-                                "combined valid fees absurdly large"
-                            );
-                        }
-                    }
+                    // Note: trade + owner fees are both computed from the same notional in this
+                    // harness; on-chain they apply to different legs. Two valid high fractions
+                    // (e.g. 90% + 90%) can sum > amount — that is not an invariant violation.
+                    let _ = (r1, r2);
                 }
             }
         });

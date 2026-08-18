@@ -1,0 +1,197 @@
+   Compiling proc-macro2 v1.0.107
+   Compiling unicode-ident v1.0.24
+   Compiling quote v1.0.47
+   Compiling semver v1.0.28
+   Compiling honggfuzz v0.5.62
+   Compiling lazy_static v1.5.0
+   Compiling rustc_version v0.4.1
+   Compiling syn v2.0.119
+   Compiling derive_arbitrary v1.4.2
+   Compiling arbitrary v1.4.2
+   Compiling orca-v1-math-fuzz v0.1.0 (/home/ziion/Documents/solanaProtocols/orca-whirlpool/fuzz/token-swap-v1/math_fuzz)
+    Finished `release` profile [optimized] target(s) in 23.76s
+Persistent signature found in 'hfuzz_target/x86_64-unknown-linux-gnu/release/v1_math'. Enabling persistent fuzzing mode
+Start time:'2026-08-18.06.34.27' bin:'hfuzz_target/x86_64-unknown-linux-gnu/release/v1_math', input:'hfuzz_workspace/v1_math/input', output:'hfuzz_workspace/v1_math/input', persistent:true, stdin:false, mutation_rate:5, timeout:1, max_runs:0, threads:4, minimize:false, git_commit:01713bdad7307acea887517f2468b4a9961f9806
+[2J[500BParsed hfuzz_target/x86_64-unknown-linux-gnu/release/v1_math: found 4471 32-bit and 3278 64-bit interesting values
+[2026-08-18T06:34:27-0700][W][14821] sanitizers_AddFlag():67 The 'ASAN_OPTIONS' envar is already set. Not overriding it!
+Entering phase 1/3: Dry Run
+Launched new fuzzing thread, no. #0
+Launched new fuzzing thread, no. #1
+Launched new fuzzing thread, no. #2
+Persistent mode: Launched new persistent pid=15370
+Persistent mode: Launched new persistent pid=15371
+Launched new fuzzing thread, no. #3
+Persistent mode: Launched new persistent pid=15372
+Sz:4 Tm:55,067us (i/b/h/e/p/c) New:0/0/0/28/1/822, Cur:0/0/0/28/1/822
+Persistent mode: Launched new persistent pid=15373
+Sz:4 Tm:53,914us (i/b/h/e/p/c) New:0/0/0/5/0/52, Cur:0/0/0/33/1/874
+Sz:8 Tm:981us (i/b/h/e/p/c) New:0/0/0/0/0/23, Cur:0/0/0/33/1/897
+Sz:8 Tm:590us (i/b/h/e/p/c) New:0/0/0/0/0/7, Cur:0/0/0/33/1/904
+Sz:16 Tm:520us (i/b/h/e/p/c) New:0/0/0/1/0/17, Cur:0/0/0/34/1/921
+Sz:16 Tm:512us (i/b/h/e/p/c) New:0/0/0/0/0/5, Cur:0/0/0/34/1/926
+Sz:26 Tm:2,424us (i/b/h/e/p/c) New:0/0/0/2/0/14, Cur:0/0/0/36/1/940
+Sz:23 Tm:3,638us (i/b/h/e/p/c) New:0/0/0/0/0/8, Cur:0/0/0/36/1/948
+Sz:32 Tm:6,397us (i/b/h/e/p/c) New:0/0/0/1/0/0, Cur:0/0/0/37/1/948
+Sz:4 Tm:14,912us (i/b/h/e/p/c) New:0/0/0/0/0/4, Cur:0/0/0/37/1/952
+Sz:32 Tm:17,375us (i/b/h/e/p/c) New:0/0/0/0/0/3, Cur:0/0/0/37/1/955
+Sz:8 Tm:13,626us (i/b/h/e/p/c) New:0/0/0/0/0/8, Cur:0/0/0/37/1/963
+Sz:4 Tm:21,338us (i/b/h/e/p/c) New:0/0/0/14/2/477, Cur:0/0/0/51/3/1440
+Sz:8 Tm:9,895us (i/b/h/e/p/c) New:0/0/0/0/0/17, Cur:0/0/0/51/3/1457
+Sz:4 Tm:12,820us (i/b/h/e/p/c) New:0/0/0/0/0/3, Cur:0/0/0/51/3/1460
+Sz:16 Tm:12,774us (i/b/h/e/p/c) New:0/0/0/3/0/78, Cur:0/0/0/54/3/1538
+Sz:21 Tm:5,156us (i/b/h/e/p/c) New:0/0/0/1/0/63, Cur:0/0/0/55/3/1601
+Sz:32 Tm:14,343us (i/b/h/e/p/c) New:0/0/0/1/0/0, Cur:0/0/0/56/3/1601
+Sz:64 Tm:29,449us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/56/3/1602
+Sz:16 Tm:38,705us (i/b/h/e/p/c) New:0/0/0/1/0/3, Cur:0/0/0/57/3/1605
+Sz:4 Tm:31,891us (i/b/h/e/p/c) New:0/0/0/0/0/8, Cur:0/0/0/57/3/1613
+Sz:64 Tm:12,683us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/57/3/1614
+Sz:8 Tm:7,537us (i/b/h/e/p/c) New:0/0/0/0/0/17, Cur:0/0/0/57/3/1631
+Sz:128 Tm:21,120us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/57/3/1632
+Sz:256 Tm:56us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/57/3/1633
+Sz:92 Tm:17,244us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/57/3/1634
+Sz:16 Tm:4,308us (i/b/h/e/p/c) New:0/0/0/0/0/8, Cur:0/0/0/57/3/1642
+Sz:22 Tm:28,248us (i/b/h/e/p/c) New:0/0/0/1/0/19, Cur:0/0/0/58/3/1661
+Sz:32 Tm:4,646us (i/b/h/e/p/c) New:0/0/0/0/0/8, Cur:0/0/0/58/3/1669
+Sz:1024 Tm:10,733us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/58/3/1671
+Sz:64 Tm:20,773us (i/b/h/e/p/c) New:0/0/0/0/0/4, Cur:0/0/0/58/3/1675
+Sz:4 Tm:27,904us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/58/3/1676
+Sz:16 Tm:9,432us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/58/3/1678
+Sz:8 Tm:15,016us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/58/3/1679
+Sz:17 Tm:20us (i/b/h/e/p/c) New:0/0/0/1/0/2, Cur:0/0/0/59/3/1681
+Sz:4 Tm:24us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/59/3/1682
+Sz:4 Tm:15us (i/b/h/e/p/c) New:0/0/0/0/0/10, Cur:0/0/0/59/3/1692
+Sz:4 Tm:33us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/59/3/1694
+Sz:16 Tm:17us (i/b/h/e/p/c) New:0/0/0/0/0/3, Cur:0/0/0/59/3/1697
+Sz:21 Tm:29us (i/b/h/e/p/c) New:0/0/0/0/0/3, Cur:0/0/0/59/3/1700
+Sz:4 Tm:22us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/59/3/1701
+Sz:16 Tm:12us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/59/3/1702
+Sz:4 Tm:18us (i/b/h/e/p/c) New:0/0/0/0/0/4, Cur:0/0/0/59/3/1706
+Sz:16 Tm:14us (i/b/h/e/p/c) New:0/0/0/0/0/4, Cur:0/0/0/59/3/1710
+Sz:32 Tm:14us (i/b/h/e/p/c) New:0/0/0/0/0/6, Cur:0/0/0/59/3/1716
+Sz:25 Tm:15us (i/b/h/e/p/c) New:0/0/0/4/0/6, Cur:0/0/0/63/3/1722
+Sz:16 Tm:12us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/63/3/1724
+Sz:16 Tm:13us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/63/3/1726
+Sz:48 Tm:16us (i/b/h/e/p/c) New:0/0/0/0/0/3, Cur:0/0/0/63/3/1729
+Sz:128 Tm:26,716us (i/b/h/e/p/c) New:0/0/0/0/0/4, Cur:0/0/0/63/3/1733
+Sz:23 Tm:25,675us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/63/3/1735
+Sz:256 Tm:18,678us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/63/3/1736
+Sz:8 Tm:16,043us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/63/3/1738
+Sz:512 Tm:15,616us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/63/3/1740
+Sz:23 Tm:42us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/63/3/1742
+Sz:4 Tm:32us (i/b/h/e/p/c) New:0/0/0/0/0/6, Cur:0/0/0/63/3/1748
+Sz:8 Tm:17us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/63/3/1749
+Sz:14 Tm:20us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/63/3/1750
+Sz:16 Tm:16us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/63/3/1752
+Sz:16 Tm:15us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/63/3/1754
+Sz:22 Tm:20us (i/b/h/e/p/c) New:0/0/0/2/0/14, Cur:0/0/0/65/3/1768
+Sz:22 Tm:26us (i/b/h/e/p/c) New:0/0/0/1/0/5, Cur:0/0/0/66/3/1773
+Sz:4 Tm:20us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1774
+Sz:8 Tm:16us (i/b/h/e/p/c) New:0/0/0/0/0/3, Cur:0/0/0/66/3/1777
+Sz:22 Tm:9,463us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/66/3/1779
+Sz:4 Tm:17,673us (i/b/h/e/p/c) New:0/0/0/0/0/3, Cur:0/0/0/66/3/1782
+Sz:32 Tm:15us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/66/3/1784
+Sz:4 Tm:22us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/66/3/1786
+Sz:32 Tm:15us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/66/3/1788
+Sz:8 Tm:15us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1789
+Sz:22 Tm:18us (i/b/h/e/p/c) New:0/0/0/0/0/3, Cur:0/0/0/66/3/1792
+Sz:22 Tm:19us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/66/3/1794
+Sz:16 Tm:14us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1795
+Sz:22 Tm:92us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/66/3/1797
+Sz:22 Tm:25us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1798
+Sz:4 Tm:30us (i/b/h/e/p/c) New:0/0/0/0/0/3, Cur:0/0/0/66/3/1801
+Sz:16 Tm:20us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1802
+Sz:20 Tm:24us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1803
+Sz:32 Tm:21us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1804
+Sz:64 Tm:37us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1805
+Sz:109 Tm:305us (i/b/h/e/p/c) New:0/0/0/0/0/3, Cur:0/0/0/66/3/1808
+Sz:4 Tm:40us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1809
+Sz:4 Tm:25us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1810
+Sz:14 Tm:22us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1811
+Sz:4 Tm:29us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1812
+Sz:18 Tm:21us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1813
+Sz:8 Tm:19us (i/b/h/e/p/c) New:0/0/0/0/0/3, Cur:0/0/0/66/3/1816
+Sz:4 Tm:27us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1817
+Sz:32 Tm:21us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1818
+Sz:512 Tm:20us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1819
+Sz:4 Tm:26us (i/b/h/e/p/c) New:0/0/0/0/0/6, Cur:0/0/0/66/3/1825
+Sz:8 Tm:21us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/66/3/1827
+Sz:16 Tm:22us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1828
+Sz:16 Tm:29us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1829
+Sz:32 Tm:29us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1830
+Sz:33 Tm:34us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1831
+Sz:8 Tm:23us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1832
+Sz:16 Tm:29us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1833
+Sz:18 Tm:54us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1834
+Sz:4 Tm:32us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1835
+Sz:17 Tm:63us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1836
+Sz:16 Tm:20us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1837
+Sz:32 Tm:22us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1838
+Sz:4 Tm:424us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1839
+Sz:16 Tm:51us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/66/3/1840
+Sz:0 Tm:133us (i/b/h/e/p/c) New:0/0/0/6/2/134, Cur:0/0/0/72/5/1974
+Sz:16 Tm:48us (i/b/h/e/p/c) New:0/0/0/0/0/3, Cur:0/0/0/72/5/1977
+Sz:17 Tm:28us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/1978
+Sz:1024 Tm:31us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/1979
+Sz:24 Tm:3,096us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/1980
+Sz:16 Tm:15us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/1981
+Sz:23 Tm:99us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/1982
+Sz:8 Tm:15us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/1983
+Sz:20 Tm:18us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/1984
+Sz:4 Tm:24us (i/b/h/e/p/c) New:0/0/0/0/0/5, Cur:0/0/0/72/5/1989
+Sz:18 Tm:17us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/1990
+Sz:4 Tm:18us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/72/5/1992
+Sz:30 Tm:3,708us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/1993
+Sz:22 Tm:96us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/1994
+Sz:64 Tm:17us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/1995
+Sz:128 Tm:75us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/1996
+Sz:512 Tm:19us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/1997
+Sz:4096 Tm:19us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/1998
+Sz:64 Tm:16us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/1999
+Sz:24 Tm:17us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/72/5/2001
+Sz:19 Tm:16us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2002
+Sz:18 Tm:17us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2003
+Sz:32 Tm:19us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2004
+Sz:22 Tm:16us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2005
+Sz:128 Tm:16us (i/b/h/e/p/c) New:0/0/0/0/0/3, Cur:0/0/0/72/5/2008
+Sz:27 Tm:17us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2009
+Sz:16 Tm:15us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2010
+Sz:26 Tm:18us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2011
+Sz:4 Tm:25us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/72/5/2013
+Sz:512 Tm:14us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2014
+Sz:25 Tm:17us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2015
+Sz:8183 Tm:27,874us (i/b/h/e/p/c) New:0/0/0/0/0/7, Cur:0/0/0/72/5/2022
+Sz:6 Tm:22us (i/b/h/e/p/c) New:0/0/0/0/0/2, Cur:0/0/0/72/5/2024
+Sz:16 Tm:15us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2025
+Sz:32 Tm:15us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2026
+Sz:32 Tm:15us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2027
+Sz:17 Tm:21us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2028
+Sz:30 Tm:21us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2029
+Sz:32 Tm:19us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2030
+Sz:32 Tm:16us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2031
+Sz:22 Tm:23us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2032
+Sz:128 Tm:19us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2033
+Sz:25 Tm:22us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2034
+Sz:8191 Tm:36us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2035
+Sz:512 Tm:18us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2036
+Entering phase 2/3: Switching to the Feedback Driven Mode
+Entering phase 3/3: Dynamic Main (Feedback Driven Mode)
+Sz:16 Tm:19us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2037
+Sz:27 Tm:18us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2038
+Sz:25 Tm:14us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2039
+Sz:19 Tm:34us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2040
+Sz:22 Tm:13us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2041
+Sz:72 Tm:623us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2042
+Sz:14 Tm:1,784us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2043
+Sz:22 Tm:21us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2044
+Sz:64 Tm:20us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2045
+Sz:32 Tm:16us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2046
+Sz:67 Tm:38us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2047
+Sz:32 Tm:15us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2048
+Sz:32 Tm:14us (i/b/h/e/p/c) New:0/0/0/0/0/1, Cur:0/0/0/72/5/2049
+Signal 15 (Terminated) received, terminating
+Terminating thread no. #3, left: 3
+Terminating thread no. #1, left: 2
+Terminating thread no. #0, left: 1
+Terminating thread no. #2, left: 0
+Summary iterations:210664 time:66 speed:3191 crashes_count:0 timeout_count:0 new_units_added:13 slowest_unit_ms:245 guard_nb:162 branch_coverage_percent:44 peak_rss_mb:329
+[r[500B
