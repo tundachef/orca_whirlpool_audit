@@ -7,8 +7,8 @@
 |---|--------|---------|------------|---------------------|
 | 1 | **COMPLETE** | Token Swap V1 | `DjVE6JNiYqPL2QXyCUUh8rNjHrbz9hXHNYt99MQ59qw1` | `audit_work/dumps/orca_v1.so` + SPL token-swap-v2.0.0 lineage |
 | 2 | **COMPLETE** | Token Swap V2 | `9W959DqEETiGZocYWCQPaJ6sBmUzgfxXfqGeTEdp3aQP` | `orca_v2.so` + SPL lineage |
-| 3 | **IN PROGRESS** | Aquafarm | `82yxjeMsvaURa4MbZZ7WZZHfobirZYkH1zF8fmeGtyaQ` | dump + typescript-sdk / aquafarm-sdk |
-| 4 | pending | Whirlpools | `whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc` | `sources/whirlpools` @ `e5f089b` |
+| 3 | **PHASE-COMPLETE** | Aquafarm | `82yxjeMsvaURa4MbZZ7WZZHfobirZYkH1zF8fmeGtyaQ` | dump + typescript-sdk / aquafarm-sdk |
+| 4 | **IN PROGRESS** @ e5f089b | Whirlpools | `whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc` | `sources/whirlpools` @ `e5f089b` |
 | 5 | pending | Wavebreak | `waveQX2yP3H1pVU8djGvEHmYg8uamQ84AuyGtpsrXTF` | dump + `orca_wavebreak` client |
 | 6 | pending | xORCA | `StaKE6XNKVVhG8Qu9hDJBqCW3eRe7MDGLz17nJZetLT` | `sources/xorca` |
 | 7 | pending | Whirlpools Immutable | `iwhrLHdsgrvmnwU8GF2FSmyabSMjfHwFGJAX2ufJ3ZN` | diff vs #4; auth burned |
