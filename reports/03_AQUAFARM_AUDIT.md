@@ -40,8 +40,20 @@ Privileged: `emissions_authority`, `remove_rewards_authority` (set at global far
 | `orca-so/aquafarm-sdk` | Client + layouts + tests |
 | `typescript-sdk` | Farm configs / `ORCA_FARM_ID` |
 
-## 4. Planned (after V1/V2)
+## 4. Fuzz (SDK-model)
 
-- Reconstruct emissions accounting from SDK layouts + ELF.
-- Fuzz convert/revert/harvest invariants (farm token conservation, cumulative emissions monotonicity).
-- Authority residual shared with V2 (`23zF9…`).
+Harness: `fuzz/aquafarm/emissions_fuzz` — harvest/accrue math from SDK:
+
+`h = farm_tokens * (cumulativeEmissionsPerFarmToken - checkpoint) / 1e12`
+
+| Sample | Result |
+|--------|--------|
+| 60s honggfuzz | **No crashes** (cumulative monotonic; synced harvest 0; rewind fails closed) |
+
+**Caveat:** Model is reconstructed from client formulas, not the closed-source on-chain processor — treat as **hypothesis** until ELF path review.
+
+## 5. Planned (full Aquafarm pass)
+
+- Convert/revert farm-token conservation against dump semantics.
+- Authority residual shared with V2 (`23zF9…`) — **High** trust.
+- Privileged `RemoveRewards` / `SetEmissionsPerSecond` abuse model.
