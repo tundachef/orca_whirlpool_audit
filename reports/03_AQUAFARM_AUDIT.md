@@ -52,8 +52,18 @@ Harness: `fuzz/aquafarm/emissions_fuzz` — harvest/accrue math from SDK:
 
 **Caveat:** Model is reconstructed from client formulas, not the closed-source on-chain processor — treat as **hypothesis** until ELF path review.
 
-## 5. Planned (full Aquafarm pass)
+## 5. Findings (so far)
 
-- Convert/revert farm-token conservation against dump semantics.
-- Authority residual shared with V2 (`23zF9…`) — **High** trust.
-- Privileged `RemoveRewards` / `SetEmissionsPerSecond` abuse model.
+| ID | Sev | Title |
+|----|-----|-------|
+| OA-I01 | **High** (trust) | Upgrade authority `23zF9…` live (shared with Token Swap V2) |
+| OA-M01 | **Medium** (trust) | `RemoveRewards` — privileged drain of reward vault to arbitrary dest (by `remove_rewards_authority`) |
+| OA-M02 | **Medium** (trust) | `SetEmissionsPerSecond` — `emissions_authority` can zero or spike emissions; no timelock in client model |
+| OA-M03 | Info | Harvest math `h = baseTokensConverted * Δcumulative` (SDK); emissions fuzz sample clean |
+| OA-I02 | Info | Dump sha256 `8e9b4884…`; built with solana-program **1.7.1** by `/Users/orca/...` |
+
+## 6. Planned (remaining)
+
+- Convert/revert farm-token ↔ base-token conservation vs dump.
+- Confirm reward vault PDA binding in ELF.
+- Longer emissions fuzz + convert/revert harness.
