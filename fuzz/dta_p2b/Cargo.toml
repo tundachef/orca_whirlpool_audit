@@ -1,15 +1,13 @@
 [package]
-name = "dta-canary"
+name = "dta-p2b"
 version = "0.1.0"
 edition = "2021"
 publish = false
 
 [[bin]]
-name = "dta_canary"
+name = "dta_p2b"
 path = "src/main.rs"
 
 [dependencies]
-# Production Whirlpool program as a library — same DynamicTickArrayLoader / update_tick
-# used on-chain. Only intentional harness difference is host backing + canary.
 whirlpool = { path = "../../sources/whirlpools/programs/whirlpool", default-features = false, features = ["cpi"] }
 borsh = "=0.10.4"

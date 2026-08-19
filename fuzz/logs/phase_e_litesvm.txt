@@ -1,0 +1,129 @@
+   Compiling or_h01_litesvm v0.1.0 (/home/ziion/Documents/solanaProtocols/audit_work/or_h01_runtime/tests/or_h01_litesvm)
+warning: field `logs` is never read
+   --> src/phase_e.rs:105:5
+    |
+ 97 | struct CaseResult {
+    |        ---------- field in this struct
+...
+105 |     logs: Vec<String>,
+    |     ^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `or_h01_litesvm` (bin "phase_e") generated 1 warning
+    Finished `release` profile [optimized] target(s) in 8.36s
+     Running `target/release/phase_e`
+Phase E — Runtime boundary & transaction-observability
+E1 gate: production cast+rotate @ N_at_rotate=260
+program_id=343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi
+so=/home/ziion/Documents/solanaProtocols/audit_work/or_h01_runtime/tests/or_h01_litesvm/../../deploy/or_h01_poc.so
+beyond_boundary_span at N=260: MAX_LEN - body = 10004 - 252 = 9752
+
+========== historical/mode3/len260 ==========
+account_len=260 body=252 MAX_LEN=10004 overclaim=9752 HEADER=52
+tx OK  cu=1555
+  log: Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi invoke [1]
+  log: Program log: mode3 body_len=252 MAX_LEN=10004
+  log: Program log: mode3 production cast rotate done
+  log: Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi consumed 1555 of 1400000 compute units
+  log: Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi success
+tick_changed=true tick_diff_bytes=199 victim_corrupted=false victim_diff_bytes=0
+tick_head=[11, d8, f6, 8e, e1, c7, da, 38, 00, 00, 00, 00, 0d, 10, 13, 16, 19, 1c, 1f, 22, 25, 28, 2b, 2e, 31, 34, 37, 3a, 3d, 40, 43, 46, 49, 4c, 4f, 52, 55, 58, 5b, 5e]
+victim_head=[aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa]
+ATTRIBUTION vs bounded-only rotate: Δ=112 (Δ>0 ⇒ post-exec account differs from in-bounds-only rotate; consistent with past-boundary bytes participating — confirm with E3.1 host arms)
+RESULT: SUCCESS_NO_CORRUPT
+
+========== all_features/mode3/len260 ==========
+account_len=260 body=252 MAX_LEN=10004 overclaim=9752 HEADER=52
+tx ERR: FailedTransactionMetadata { err: InstructionError(0, InvalidRealloc), meta: TransactionMetadata { signature: 2sWMizBuyiiorf668kDcgwJrm2S3HUh1mgLfwXX9XWgJchE5dtEKk6amY7ykHWKZAHBEmWiTvNd4HujM5KAyEGZA, logs: ["Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi invoke [1]", "Program log: mode3 body_len=252 MAX_LEN=10004", "Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi consumed 1284 of 1400000 compute units", "Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi failed: Failed to reallocate account data"], inner_instructions: [[]], compute_units_consumed: 1284, return_data: TransactionReturnData { program_id: 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi, data: [] } } }
+tick_changed=false tick_diff_bytes=0 victim_corrupted=false victim_diff_bytes=0
+tick_head=[11, d8, f6, 8e, e1, c7, da, 38, 00, 00, 00, 00, 0d, 10, 13, 16, 19, 1c, 1f, 22, 25, 28, 2b, 2e, 31, 34, 37, 3a, 3d, 40, 43, 46, 49, 4c, 4f, 52, 55, 58, 5b, 5e]
+victim_head=[aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa]
+RESULT: TRAP
+
+========== historical/mode0/len260 ==========
+account_len=260 body=252 MAX_LEN=10004 overclaim=9752 HEADER=52
+tx OK  cu=1545
+  log: Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi invoke [1]
+  log: Program log: mode0 body_len=252 MAX_BODY=9996
+  log: Program log: mode0 rotate done
+  log: Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi consumed 1545 of 1400000 compute units
+  log: Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi success
+tick_changed=true tick_diff_bytes=199 victim_corrupted=false victim_diff_bytes=0
+tick_head=[11, d8, f6, 8e, e1, c7, da, 38, 00, 00, 00, 00, 0d, 10, 13, 16, 19, 1c, 1f, 22, 25, 28, 2b, 2e, 31, 34, 37, 3a, 3d, 40, 43, 46, 49, 4c, 4f, 52, 55, 58, 5b, 5e]
+victim_head=[aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa]
+ATTRIBUTION vs bounded-only rotate: Δ=112 (Δ>0 ⇒ post-exec account differs from in-bounds-only rotate; consistent with past-boundary bytes participating — confirm with E3.1 host arms)
+RESULT: SUCCESS_NO_CORRUPT
+
+========== all_features/mode0/len260 ==========
+account_len=260 body=252 MAX_LEN=10004 overclaim=9752 HEADER=52
+tx ERR: FailedTransactionMetadata { err: InstructionError(0, InvalidRealloc), meta: TransactionMetadata { signature: 22hvjufeAonCt1m3a4sRvLdZaXLryKW36otNSFDzAtSiqfQFGzZdJTZF53fxbu7fF2PEPUHUupNwiEttjZ1W4VuF, logs: ["Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi invoke [1]", "Program log: mode0 body_len=252 MAX_BODY=9996", "Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi consumed 1274 of 1400000 compute units", "Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi failed: Failed to reallocate account data"], inner_instructions: [[]], compute_units_consumed: 1274, return_data: TransactionReturnData { program_id: 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi, data: [] } } }
+tick_changed=false tick_diff_bytes=0 victim_corrupted=false victim_diff_bytes=0
+tick_head=[11, d8, f6, 8e, e1, c7, da, 38, 00, 00, 00, 00, 0d, 10, 13, 16, 19, 1c, 1f, 22, 25, 28, 2b, 2e, 31, 34, 37, 3a, 3d, 40, 43, 46, 49, 4c, 4f, 52, 55, 58, 5b, 5e]
+victim_head=[aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa]
+RESULT: TRAP
+
+========== historical/mode3/len10004 ==========
+account_len=10004 body=9996 MAX_LEN=10004 overclaim=8 HEADER=52
+tx OK  cu=1563
+  log: Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi invoke [1]
+  log: Program log: mode3 body_len=9996 MAX_LEN=10004
+  log: Program log: mode3 production cast rotate done
+  log: Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi consumed 1563 of 1400000 compute units
+  log: Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi success
+tick_changed=true tick_diff_bytes=9944 victim_corrupted=false victim_diff_bytes=0
+tick_head=[11, d8, f6, 8e, e1, c7, da, 38, 00, 00, 00, 00, 0d, 10, 13, 16, 19, 1c, 1f, 22, 25, 28, 2b, 2e, 31, 34, 37, 3a, 3d, 40, 43, 46, 49, 4c, 4f, 52, 55, 58, 5b, 5e]
+victim_head=[aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa]
+RESULT: SUCCESS_NO_CORRUPT
+
+========== all_features/mode3/len10004 ==========
+account_len=10004 body=9996 MAX_LEN=10004 overclaim=8 HEADER=52
+tx ERR: FailedTransactionMetadata { err: InstructionError(0, InvalidRealloc), meta: TransactionMetadata { signature: 3G3GfxBnUcnXTyo2ee2ALnQUEgyeGpEExkD2pZE1szfJuXci6supEuRzXgGuSGiN1tbrHWzjkei27KAE7iTEoPVN, logs: ["Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi invoke [1]", "Program log: mode3 body_len=9996 MAX_LEN=10004", "Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi consumed 1292 of 1400000 compute units", "Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi failed: Failed to reallocate account data"], inner_instructions: [[]], compute_units_consumed: 1292, return_data: TransactionReturnData { program_id: 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi, data: [] } } }
+tick_changed=false tick_diff_bytes=0 victim_corrupted=false victim_diff_bytes=0
+tick_head=[11, d8, f6, 8e, e1, c7, da, 38, 00, 00, 00, 00, 0d, 10, 13, 16, 19, 1c, 1f, 22, 25, 28, 2b, 2e, 31, 34, 37, 3a, 3d, 40, 43, 46, 49, 4c, 4f, 52, 55, 58, 5b, 5e]
+victim_head=[aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa]
+RESULT: TRAP
+
+========== historical/mode3/len148 ==========
+account_len=148 body=140 MAX_LEN=10004 overclaim=9864 HEADER=52
+tx OK  cu=1555
+  log: Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi invoke [1]
+  log: Program log: mode3 body_len=140 MAX_LEN=10004
+  log: Program log: mode3 production cast rotate done
+  log: Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi consumed 1555 of 1400000 compute units
+  log: Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi success
+tick_changed=true tick_diff_bytes=87 victim_corrupted=false victim_diff_bytes=0
+tick_head=[11, d8, f6, 8e, e1, c7, da, 38, 00, 00, 00, 00, 0d, 10, 13, 16, 19, 1c, 1f, 22, 25, 28, 2b, 2e, 31, 34, 37, 3a, 3d, 40, 43, 46, 49, 4c, 4f, 52, 55, 58, 5b, 5e]
+victim_head=[aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa]
+RESULT: SUCCESS_NO_CORRUPT
+
+========== all_features/mode3/len148 ==========
+account_len=148 body=140 MAX_LEN=10004 overclaim=9864 HEADER=52
+tx ERR: FailedTransactionMetadata { err: InstructionError(0, InvalidRealloc), meta: TransactionMetadata { signature: 2riSaTqTtdqoJ9dgN4v4RZ41w5iLDDvfrwLgMGAQ5AWDURg6595SZq399Rgg4ELBBkYFM6bjqssYPB6PK7bF1xWV, logs: ["Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi invoke [1]", "Program log: mode3 body_len=140 MAX_LEN=10004", "Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi consumed 1284 of 1400000 compute units", "Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi failed: Failed to reallocate account data"], inner_instructions: [[]], compute_units_consumed: 1284, return_data: TransactionReturnData { program_id: 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi, data: [] } } }
+tick_changed=false tick_diff_bytes=0 victim_corrupted=false victim_diff_bytes=0
+tick_head=[11, d8, f6, 8e, e1, c7, da, 38, 00, 00, 00, 00, 0d, 10, 13, 16, 19, 1c, 1f, 22, 25, 28, 2b, 2e, 31, 34, 37, 3a, 3d, 40, 43, 46, 49, 4c, 4f, 52, 55, 58, 5b, 5e]
+victim_head=[aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa, aa]
+RESULT: TRAP
+
+========== E1 MATRIX ==========
+case                                                outcome  tickΔ   vicΔ tick_bytes vic_bytes
+historical/mode3/len260                    SuccessNoCorrupt   true  false      199        0
+all_features/mode3/len260                  Trap  false  false        0        0
+    err: FailedTransactionMetadata { err: InstructionError(0, InvalidRealloc), meta: TransactionMetadata { signature: 2sWMizBuyii
+historical/mode0/len260                    SuccessNoCorrupt   true  false      199        0
+all_features/mode0/len260                  Trap  false  false        0        0
+    err: FailedTransactionMetadata { err: InstructionError(0, InvalidRealloc), meta: TransactionMetadata { signature: 22hvjufeAon
+historical/mode3/len10004                  SuccessNoCorrupt   true  false     9944        0
+all_features/mode3/len10004                Trap  false  false        0        0
+    err: FailedTransactionMetadata { err: InstructionError(0, InvalidRealloc), meta: TransactionMetadata { signature: 3G3GfxBnUcn
+historical/mode3/len148                    SuccessNoCorrupt   true  false       87        0
+all_features/mode3/len148                  Trap  false  false        0        0
+    err: FailedTransactionMetadata { err: InstructionError(0, InvalidRealloc), meta: TransactionMetadata { signature: 2riSaTqTtdq
+
+========== E1 INTERPRETATION (mode3/len260 only) ==========
+historical/mode3/len260 → SUCCEEDS, no neighbor corrupt — proceed E2/E3 (discarded vs observable)
+all_features/mode3/len260 → TRAP — runtime containment; stop impact ascent (Level 1 fail)
+
+========== NEXT ==========
+E1: at least one SUCCEEDS → proceed E2/E3 program-level observability.
+Do NOT treat neighbor smash as theft without E3–E4.

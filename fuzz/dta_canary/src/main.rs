@@ -1,36 +1,24 @@
-//! Layer-3 instrumentation for DynamicTickArrayLoader size lie.
-//! No Agave — proves which bytes past the real account body are actually touched
-//! when rotate_* runs on a falsely sized MAX_LEN view.
+//! Phase A — production-path Layer-3 canary for DynamicTickArray.
 //!
-//! Mirrors production constants and the unsafe cast + rotate pattern.
+//! Uses the **actual** `whirlpool::state::DynamicTickArrayLoader::{load_mut, update_tick}`
+//! (via `TickArrayType`), not a reimplementation of cast+rotate.
+//!
+//! Only intentional difference vs production: host `Vec` backing + gradient canary
+//! past the supplied account-data boundary.
+//!
+//! Probes `N_at_rotate` explicitly along the production resize order.
 
-use std::mem::size_of;
+use borsh::BorshSerialize;
+use whirlpool::state::{
+    DynamicTick, DynamicTickArray, DynamicTickArrayLoader, DynamicTickData, TickArrayType,
+    TickUpdate, TICK_ARRAY_SIZE_USIZE,
+};
 
 const DISC: usize = 8;
-const HEADER: usize = 4 + 32 + 16; // start + whirlpool + bitmap
-const TICK_DATA_OFFSET: usize = HEADER; // 52 in body coords / loader without disc... 
-// Anchor loader is cast on data[8..], so loader[0] = body[0], TICK_DATA_OFFSET in loader = 52
-const TICK_DATA_OFF: usize = 52;
-const UNINIT: usize = 1;
-const INIT: usize = 113;
-const DATA_LEN: usize = 112; // DynamicTickData::LEN
-const N_TICKS: usize = 88;
-const MAX_LEN: usize = DISC + HEADER + INIT * N_TICKS; // 10004
-const MIN_LEN: usize = DISC + HEADER + UNINIT * N_TICKS; // 148
-const CANARY: u8 = 0xA5;
 const GUARD: usize = 16_384;
-
-#[repr(C)]
-struct Loader([u8; MAX_LEN]);
-
-/// Mimic `load_mut(&mut data[8..])` — discards slice length.
-unsafe fn load_mut_body(body: &mut [u8]) -> &mut Loader {
-    &mut *(body.as_mut_ptr() as *mut Loader)
-}
-
-fn tick_data_mut(loader: &mut Loader) -> &mut [u8] {
-    &mut loader.0[TICK_DATA_OFF..]
-}
+const CANARY: u8 = 0xA5;
+const TICK_SPACING: u16 = 1;
+const START_TICK_INDEX: i32 = 0;
 
 /// Gradient canary: each past-boundary byte is unique so rotate canary↔canary still shows.
 fn paint_canary(buf: &mut [u8], account_len: usize) {
@@ -60,149 +48,230 @@ fn count_dirty_past(buf: &[u8], account_len: usize) -> usize {
         .count()
 }
 
-/// Experiment: rotate_right on short body, mimicking increase AFTER +112 resize.
-fn exp_rotate_right_after_increase() {
-    println!("\n=== EXP B/C: rotate_right after +112 (increase path order) ===");
-    // Production increase: resize first, then rotate.
-    // Start empty account MIN_LEN, resize to MIN+112, body = MIN_LEN-8+112 = 252
-    let account_len = MIN_LEN + DATA_LEN; // 260 full account with disc
-    let body_len = account_len - DISC; // 252
-    let mut backing = vec![0u8; account_len + GUARD];
-    // disc + empty body pattern
-    backing[0..DISC].copy_from_slice(&[0x11, 0xd8, 0xf6, 0x8e, 0xe1, 0xc7, 0xda, 0x38]);
-    // body already zeroed; after resize the extra 112 are zero (fresh)
-    paint_canary(&mut backing, account_len);
-
-    let body = &mut backing[DISC..account_len];
-    assert_eq!(body.len(), body_len);
-
-    unsafe {
-        let loader = load_mut_body(body);
-        let data_mut = tick_data_mut(loader);
-        let byte_offset = 0usize;
-        let shift = &mut data_mut[byte_offset..];
-        println!(
-            "  claimed shift_data.len() = {} (type-level)",
-            shift.len()
-        );
-        println!(
-            "  real tick bytes available in account body = {}",
-            body_len.saturating_sub(TICK_DATA_OFF)
-        );
-        shift.rotate_right(DATA_LEN);
-    }
-
-    let first = first_dirty_past(&backing, account_len);
-    let last = last_dirty_past(&backing, account_len);
-    let n = count_dirty_past(&backing, account_len);
-    println!("  account_len (with disc) = {account_len}");
+fn report_dirty(label: &str, buf: &[u8], account_len: usize) {
+    let n = count_dirty_past(buf, account_len);
+    let first = first_dirty_past(buf, account_len);
+    let last = last_dirty_past(buf, account_len);
+    println!("  [{label}] account_len={account_len}");
     println!("  dirty past boundary: count={n} first={first:?} last={last:?}");
     if let (Some(f), Some(l)) = (first, last) {
-        println!("  measured OOB span = {} bytes (inclusive)", l - f + 1);
+        println!(
+            "  canary detected modifications spanning {} bytes beyond account-data boundary",
+            l - f + 1
+        );
+    } else {
+        println!("  canary detected no past-boundary modifications");
     }
 }
 
-/// Decrease path: rotate_left WHILE still large, then would shrink.
-fn exp_rotate_left_before_decrease() {
-    println!("\n=== EXP B/C: rotate_left before -112 (decrease path order) ===");
-    // One initialized tick packed: size = MIN + 112
-    let account_len = MIN_LEN + DATA_LEN; // 260
-    let body_len = account_len - DISC;
-    let mut backing = vec![0u8; account_len + GUARD];
-    backing[0..DISC].copy_from_slice(&[0x11, 0xd8, 0xf6, 0x8e, 0xe1, 0xc7, 0xda, 0x38]);
-    // Put a plausible initialized tick at offset 0 in tick region: tag=1 + 112 data
-    let tick_start = DISC + TICK_DATA_OFF;
-    backing[tick_start] = 1;
-    for i in 0..DATA_LEN {
-        backing[tick_start + 1 + i] = (i & 0xff) as u8;
-    }
-    // remaining uninit ticks as zeros (87 bytes) — already zero
-    // bitmap: bit 0 set
-    let bitmap_off = DISC + 36;
-    backing[bitmap_off] = 0x01;
-
-    paint_canary(&mut backing, account_len);
-
-    let body = &mut backing[DISC..account_len];
-    unsafe {
-        let loader = load_mut_body(body);
-        let data_mut = tick_data_mut(loader);
-        let shift = &mut data_mut[0..];
-        println!("  claimed shift_data.len() = {}", shift.len());
-        shift.rotate_left(DATA_LEN);
-    }
-
-    let first = first_dirty_past(&backing, account_len);
-    let last = last_dirty_past(&backing, account_len);
-    let n = count_dirty_past(&backing, account_len);
-    println!("  account_len = {account_len}");
-    println!("  dirty past boundary: count={n} first={first:?} last={last:?}");
-    if let (Some(f), Some(l)) = (first, last) {
-        println!("  measured OOB span = {} bytes", l - f + 1);
+fn initialized_update() -> TickUpdate {
+    TickUpdate {
+        initialized: true,
+        liquidity_net: 123,
+        liquidity_gross: 456,
+        fee_growth_outside_a: 678,
+        fee_growth_outside_b: 901,
+        reward_growths_outside: [234, 567, 890],
     }
 }
 
-/// Full account still has +8 overclaim on Anchor body cast.
-fn exp_full_account_plus8() {
-    println!("\n=== EXP: full MAX account, Anchor data[8..] still +8 overclaim ===");
-    let account_len = MAX_LEN;
-    let body_len = account_len - DISC; // 9996
-    let mut backing = vec![0u8; account_len + GUARD];
-    for i in DISC..account_len {
-        backing[i] = (i & 0xff) as u8;
-    }
-    paint_canary(&mut backing, account_len);
+fn uninitialized_update() -> TickUpdate {
+    TickUpdate::default()
+}
+
+/// Write an empty DynamicTickArray body (all ticks Uninitialized) into account bytes.
+fn write_empty_dta_account(backing: &mut [u8], account_len: usize) {
+    assert!(account_len >= DynamicTickArray::MIN_LEN);
+    assert!(backing.len() >= account_len);
+
+    // Discriminator (Anchor DynamicTickArray) — value unused by loader (cast is on body).
+    backing[0..DISC].copy_from_slice(&[0x11, 0xd8, 0xf6, 0x8e, 0xe1, 0xc7, 0xda, 0x38]);
 
     let body = &mut backing[DISC..account_len];
-    assert_eq!(body.len(), body_len);
+    body.fill(0);
+    // start_tick_index @ 0
+    body[0..4].copy_from_slice(&START_TICK_INDEX.to_le_bytes());
+    // whirlpool pubkey @ 4..36 already zero
+    // tick_bitmap @ 36..52 already zero
+    // ticks @ 52.. : MIN body has 88 uninit tags (zeros)
+}
+
+/// Write a one-initialized-tick account (first tick Init, rest Uninit) of size MIN+112.
+fn write_one_tick_dta_account(backing: &mut [u8], account_len: usize) {
+    assert_eq!(account_len, DynamicTickArray::MIN_LEN + DynamicTickData::LEN);
+    write_empty_dta_account(backing, account_len);
+
+    let body = &mut backing[DISC..account_len];
+    // bitmap bit 0 set
+    body[36] = 0x01;
+
+    // tick 0 = Initialized(...) packed at tick data offset 52
+    let tick_off = 52;
+    let tick = DynamicTick::Initialized(DynamicTickData {
+        liquidity_net: 123,
+        liquidity_gross: 456,
+        fee_growth_outside_a: 678,
+        fee_growth_outside_b: 901,
+        reward_growths_outside: [234, 567, 890],
+    });
+    let encoded = tick.try_to_vec().expect("encode DynamicTick");
+    assert_eq!(encoded.len(), DynamicTick::INITIALIZED_LEN);
+    body[tick_off..tick_off + encoded.len()].copy_from_slice(&encoded);
+    // remaining 87 uninit tags already zero
+}
+
+/// Production increase order:
+///   resize(+112) → load_mut → update_tick → rotate_right
+fn exp_increase_first_tick_production_path() {
+    println!("\n=== PHASE A: increase first tick (production update_tick, grow-then-rotate) ===");
+
+    let min_len = DynamicTickArray::MIN_LEN;
+    let data_len = DynamicTickData::LEN;
+    let max_len = DynamicTickArray::MAX_LEN;
+
+    println!("  constants: MIN_LEN={min_len} MAX_LEN={max_len} DynamicTickData::LEN={data_len}");
+    println!("  TICK_ARRAY_SIZE={TICK_ARRAY_SIZE_USIZE}");
+
+    // --- probe: before resize ---
+    let n_before_resize = min_len;
+    println!("  probe before_resize      data_len = {n_before_resize}");
+
+    // --- simulate resize(+112) ---
+    let n_after_resize = min_len + data_len; // 260
+    println!("  probe after_resize       data_len = {n_after_resize}");
+    assert_eq!(n_after_resize, 260);
+
+    let mut backing = vec![0u8; n_after_resize + GUARD];
+    write_empty_dta_account(&mut backing, n_after_resize);
+    // Fresh resize bytes are zeros (already); paint canary past new boundary.
+    paint_canary(&mut backing, n_after_resize);
+
+    let n_before_load_mut = n_after_resize;
+    println!("  probe before_load_mut    data_len = {n_before_load_mut}");
+
+    let n_at_rotate = n_after_resize;
+    println!("  probe N_at_rotate        data_len = {n_at_rotate}  (rotate inside update_tick)");
+
+    // Production Anchor path: cast on data[8..]
+    let body = &mut backing[DISC..n_at_rotate];
     println!(
-        "  body.len()={} MAX_LEN={} overclaim={}",
-        body_len,
-        MAX_LEN,
-        MAX_LEN - body_len
+        "  body.len()={} claimed Loader MAX_LEN={} overclaim={}",
+        body.len(),
+        max_len,
+        max_len.saturating_sub(body.len())
     );
 
-    unsafe {
-        let loader = load_mut_body(body);
-        let data_mut = tick_data_mut(loader);
-        // Small offset so claimed_shift_len > 112
-        let byte_offset = 0usize;
-        let shift = &mut data_mut[byte_offset..];
-        println!(
-            "  byte_offset={byte_offset} claimed_shift_len={}",
-            shift.len()
-        );
-        // Only form the slice — don't rotate if len < DATA_LEN (shouldn't happen)
-        if shift.len() >= DATA_LEN {
-            shift.rotate_right(DATA_LEN);
-        }
-    }
+    let loader = DynamicTickArrayLoader::load_mut(body);
+    assert_eq!(loader.start_tick_index(), START_TICK_INDEX);
 
-    let n = count_dirty_past(&backing, account_len);
-    let first = first_dirty_past(&backing, account_len);
-    let last = last_dirty_past(&backing, account_len);
-    println!("  dirty past boundary: count={n} first={first:?} last={last:?}");
+    // Actual production transition: Uninit → Init at tick index 0
+    loader
+        .update_tick(START_TICK_INDEX, TICK_SPACING, &initialized_update())
+        .expect("update_tick Uninit→Init");
+
+    report_dirty("increase/rotate_right via production update_tick", &backing, n_at_rotate);
 }
 
-/// get_tick-style slice construction: does forming [off..off+113] require claimed length?
-fn exp_get_tick_slice() {
-    println!("\n=== EXP A/P2: get_tick slice construction (Layer 2 vs Layer 3) ===");
-    println!("  Source: `let mut tick_data = &ticks_data[byte_offset..byte_offset + 113];`");
-    println!("  Then DynamicTick::deserialize(&mut tick_data).");
-    println!("  Borsh enum: Uninitialized reads 1 byte tag; Initialized reads 113.");
-    println!("  BUT forming the 113-byte slice indexes the claimed tick_data slice (len=9952).");
-    println!("  Layer 2: slice construction is in-bounds of CLAIMED len whenever byte_offset+113 <= 9952.");
-    println!("  Layer 3: actual deserialize READ is 1 byte (uninit) or 113 (init) from that slice.");
-    println!("  ⇒ P2 rewritten: unconditional 113-byte *slice formation* on claimed extent;");
-    println!("    not necessarily a 113-byte *physical read* for uninitialized ticks.");
+/// Production decrease order:
+///   load_mut → update_tick → rotate_left → (later) resize(-112)
+fn exp_decrease_last_tick_production_path() {
+    println!("\n=== PHASE A: decrease last tick (production update_tick, rotate-then-shrink) ===");
+
+    let n_at_rotate = DynamicTickArray::MIN_LEN + DynamicTickData::LEN; // still large
+    println!("  probe N_at_rotate (pre-shrink) data_len = {n_at_rotate}");
+    assert_eq!(n_at_rotate, 260);
+
+    let mut backing = vec![0u8; n_at_rotate + GUARD];
+    write_one_tick_dta_account(&mut backing, n_at_rotate);
+    paint_canary(&mut backing, n_at_rotate);
+
+    println!("  probe before_load_mut    data_len = {n_at_rotate}");
+    println!("  probe before_update_tick data_len = {n_at_rotate}");
+
+    let body = &mut backing[DISC..n_at_rotate];
+    let loader = DynamicTickArrayLoader::load_mut(body);
+
+    // Confirm starting state via production get_tick
+    let before = loader
+        .get_tick(START_TICK_INDEX, TICK_SPACING)
+        .expect("get_tick before");
+    assert!(before.initialized);
+
+    loader
+        .update_tick(START_TICK_INDEX, TICK_SPACING, &uninitialized_update())
+        .expect("update_tick Init→Uninit");
+
+    report_dirty("decrease/rotate_left via production update_tick", &backing, n_at_rotate);
+
+    // Probe what resize(-112) would set afterward (not executed against canary here)
+    let n_after_shrink = DynamicTickArray::MIN_LEN;
+    println!("  probe after_resize(-112) would be data_len = {n_after_shrink}");
+}
+
+/// Full MAX account: Anchor body cast still overclaims by 8.
+fn exp_full_account_anchor_plus8() {
+    println!("\n=== PHASE A: full MAX account, Anchor data[8..] +8 overclaim ===");
+
+    let account_len = DynamicTickArray::MAX_LEN;
+    let mut backing = vec![0u8; account_len + GUARD];
+    write_empty_dta_account(&mut backing, DynamicTickArray::MIN_LEN);
+    // Fill rest of account with deterministic body bytes (all uninit layout doesn't fit MAX;
+    // for this experiment we only need a valid header + enough zeros, then rotate on claimed extent).
+    for i in DynamicTickArray::MIN_LEN..account_len {
+        backing[i] = (i & 0xff) as u8;
+    }
+    // Ensure disc + header coherent; zero tick region would be ideal but MAX-sized all-uninit
+    // is not a valid packed size. We only need rotate to run on the falsely extended view.
+    // Re-init as empty header on full buffer: start/bitmap zero, ticks garbage OK for rotate probe.
+    backing[DISC..account_len].fill(0);
+    backing[DISC..DISC + 4].copy_from_slice(&START_TICK_INDEX.to_le_bytes());
+    paint_canary(&mut backing, account_len);
+
+    println!("  probe N_at_rotate        data_len = {account_len}");
+    let body = &mut backing[DISC..account_len];
+    println!(
+        "  body.len()={} MAX_LEN={} overclaim={}",
+        body.len(),
+        DynamicTickArray::MAX_LEN,
+        DynamicTickArray::MAX_LEN - body.len()
+    );
+
+    let loader = DynamicTickArrayLoader::load_mut(body);
+    loader
+        .update_tick(START_TICK_INDEX, TICK_SPACING, &initialized_update())
+        .expect("update_tick on full account");
+
+    report_dirty("full Anchor cast rotate via production update_tick", &backing, account_len);
+}
+
+fn print_fidelity_table() {
+    println!("\n=== Harness fidelity ===");
+    println!("Component                         Production     Harness");
+    println!("---------------------------------------------------------");
+    println!("DynamicTickArrayLoader            same           same (whirlpool path dep)");
+    println!("update_tick                       same           same");
+    println!("tick_data_mut                     same           same (via update_tick)");
+    println!("rotate_right/left                 same           same");
+    println!("account body offset               8              8");
+    println!("account length (first-tick)       260            260");
+    println!("resize ordering                   same           same (simulated)");
+    println!("tick state transition             same           same");
+    println!("backing allocation                SVM            host+canary  ← only intentional diff");
 }
 
 fn main() {
-    println!("MAX_LEN={MAX_LEN} MIN_LEN={MIN_LEN} size_of::<Loader>()={}", size_of::<Loader>());
-    println!("align_of::<Loader>()={}", std::mem::align_of::<Loader>());
-    exp_get_tick_slice();
-    exp_rotate_right_after_increase();
-    exp_rotate_left_before_decrease();
-    exp_full_account_plus8();
+    println!("dta_canary Phase A — production-path canary");
+    println!(
+        "MIN_LEN={} MAX_LEN={} INIT_LEN={} UNINIT_LEN={} DATA_LEN={}",
+        DynamicTickArray::MIN_LEN,
+        DynamicTickArray::MAX_LEN,
+        DynamicTick::INITIALIZED_LEN,
+        DynamicTick::UNINITIALIZED_LEN,
+        DynamicTickData::LEN,
+    );
+    print_fidelity_table();
+    exp_increase_first_tick_production_path();
+    exp_decrease_last_tick_production_path();
+    exp_full_account_anchor_plus8();
     println!("\n=== DONE ===");
 }

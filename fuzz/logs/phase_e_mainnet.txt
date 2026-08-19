@@ -1,0 +1,49 @@
+   Compiling or_h01_litesvm v0.1.0 (/home/ziion/Documents/solanaProtocols/audit_work/or_h01_runtime/tests/or_h01_litesvm)
+warning: unused variable: `mode_supported`
+   --> src/phase_e_mainnet.rs:293:17
+    |
+293 |             let mode_supported = !out
+    |                 ^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_mode_supported`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: `or_h01_litesvm` (bin "phase_e_mainnet") generated 1 warning
+    Finished `release` profile [optimized] target(s) in 8.01s
+     Running `target/release/phase_e_mainnet`
+Phase E — exact mainnet FeatureSet + full production-like transition
+program=343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi so=/home/ziion/Documents/solanaProtocols/audit_work/or_h01_runtime/tests/or_h01_litesvm/../../deploy/or_h01_poc.so
+N_at_rotate=260 body=252 beyond_claim=9752
+E0.5 FeatureSet: activated 301 features from /home/ziion/Documents/solanaProtocols/audit_work/or_h01_runtime/tests/or_h01_litesvm/../../../../orca-whirlpool/fuzz/logs/mainnet_activated_features.json (skipped 0)
+  stricter_abi active? false  direct_mapping active? false
+
+========== mainnet_activated mode=6 len=260 ==========
+tx OK cu=1478
+  log: Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi invoke [1]
+  log: Program log: mode6 E3.1b BEFORE rotate body_len=252
+  log: Program log: mode6 AFTER rotate BEFORE serialize
+  log: Program log: mode6 AFTER serialize
+  log: Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi consumed 1478 of 1400000 compute units
+  log: Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi success
+tickΔ_vs_pre=114 tickΔ_vs_reference=0 victimΔ=0
+body_head=[11, d8, f6, 8e, e1, c7, da, 38, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 01, 00, 00, 00]
+
+========== historical_default mode=6 len=260 ==========
+tx OK cu=1478
+  log: Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi invoke [1]
+  log: Program log: mode6 E3.1b BEFORE rotate body_len=252
+  log: Program log: mode6 AFTER rotate BEFORE serialize
+  log: Program log: mode6 AFTER serialize
+  log: Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi consumed 1478 of 1400000 compute units
+  log: Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi success
+tickΔ_vs_pre=114 tickΔ_vs_reference=0 victimΔ=0
+body_head=[11, d8, f6, 8e, e1, c7, da, 38, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 01, 00, 00, 00]
+
+========== all_enabled mode=6 len=260 ==========
+tx ERR: FailedTransactionMetadata { err: InstructionError(0, InvalidRealloc), meta: TransactionMetadata { signature: 3Bm8PSptCuFfXzTi4u2mbKA5H9Hf8MKtNjFFLoPF79pxmnVGToCmFRrs1F5ZQUEHLtMKnJQmUtGLcWEPgcXRWzJc, logs: ["Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi invoke [1]", "Program log: mode6 E3.1b BEFORE rotate body_len=252", "Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi consumed 1078 of 1400000 compute units", "Program 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi failed: Failed to reallocate account data"], inner_instructions: [[]], compute_units_consumed: 1078, return_data: TransactionReturnData { program_id: 343SfmnV2pQqDRJ7TJFm1NnXewKELe5LPvgeUV2wpsPi, data: [] } } }
+tickΔ_vs_pre=0 tickΔ_vs_reference=114 victimΔ=0
+body_head=[11, d8, f6, 8e, e1, c7, da, 38, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00]
+
+========== BINARY FORK SUMMARY ==========
+mainnet_activated      mode=6 ok=true Δpre=114 Δref=0 vicΔ=0 → SUCCESS + == reference → STOP (no demonstrated impact)
+historical_default     mode=6 ok=true Δpre=114 Δref=0 vicΔ=0 → SUCCESS + == reference → STOP (no demonstrated impact)
+all_enabled            mode=6 ok=false Δpre=0 Δref=114 vicΔ=0 → TRAP(InvalidRealloc) → containment

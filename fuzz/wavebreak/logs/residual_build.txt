@@ -1,0 +1,8 @@
+/usr/bin/ld.gold
+   Compiling wavebreak-math-fuzz v0.1.0 (/home/ziion/Documents/solanaProtocols/orca-whirlpool/fuzz/wavebreak/math_fuzz)
+warning: the gold linker is deprecated and has known bugs with Rust
+  |
+  = help: consider using LLD or ld from GNU binutils instead
+
+warning: `wavebreak-math-fuzz` (bin "wb_math") generated 1 warning
+    Finished `release` profile [optimized] target(s) in 1.58s

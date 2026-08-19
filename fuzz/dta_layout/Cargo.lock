@@ -689,7 +689,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "dta-canary"
+name = "dta-layout"
 version = "0.1.0"
 dependencies = [
  "borsh 0.10.4",

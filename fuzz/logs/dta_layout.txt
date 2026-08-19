@@ -1023,51 +1023,59 @@ help: use `'_` for type paths
     |                                               +++
 
 warning: `whirlpool` (lib) generated 90 warnings (5 duplicates) (run `cargo fix --lib -p whirlpool` to apply 5 suggestions)
-   Compiling dta-canary v0.1.0 (/home/ziion/Documents/solanaProtocols/orca-whirlpool/fuzz/dta_canary)
-    Finished `release` profile [optimized] target(s) in 2.82s
-     Running `target/release/dta_canary`
-dta_canary Phase A — production-path canary
-MIN_LEN=148 MAX_LEN=10004 INIT_LEN=113 UNINIT_LEN=1 DATA_LEN=112
+   Compiling dta-layout v0.1.0 (/home/ziion/Documents/solanaProtocols/orca-whirlpool/fuzz/dta_layout)
+    Finished `release` profile [optimized] target(s) in 4.89s
+     Running `target/release/dta_layout`
+dta_layout Phase B — bitmap↔packed differential + bounded reference
+N=88 MIN_LEN=148 MAX_LEN=10004 U=1 I=113
 
-=== Harness fidelity ===
-Component                         Production     Harness
----------------------------------------------------------
-DynamicTickArrayLoader            same           same (whirlpool path dep)
-update_tick                       same           same
-tick_data_mut                     same           same (via update_tick)
-rotate_right/left                 same           same
-account body offset               8              8
-account length (first-tick)       260            260
-resize ordering                   same           same (simulated)
-tick state transition             same           same
-backing allocation                SVM            host+canary  ← only intentional diff
+=== sequence: asc_init_all (88 steps) ===
+  transitions=88 invariant_checks_ok=89 diffs=0
 
-=== PHASE A: increase first tick (production update_tick, grow-then-rotate) ===
-  constants: MIN_LEN=148 MAX_LEN=10004 DynamicTickData::LEN=112
-  TICK_ARRAY_SIZE=88
-  probe before_resize      data_len = 148
-  probe after_resize       data_len = 260
-  probe before_load_mut    data_len = 260
-  probe N_at_rotate        data_len = 260  (rotate inside update_tick)
-  body.len()=252 claimed Loader MAX_LEN=10004 overclaim=9752
-  [increase/rotate_right via production update_tick] account_len=260
-  dirty past boundary: count=9752 first=Some(260) last=Some(10011)
-  canary detected modifications spanning 9752 bytes beyond account-data boundary
+=== sequence: asc_init_then_clear (176 steps) ===
+  transitions=176 invariant_checks_ok=177 diffs=0
 
-=== PHASE A: decrease last tick (production update_tick, rotate-then-shrink) ===
-  probe N_at_rotate (pre-shrink) data_len = 260
-  probe before_load_mut    data_len = 260
-  probe before_update_tick data_len = 260
-  [decrease/rotate_left via production update_tick] account_len=260
-  dirty past boundary: count=9751 first=Some(260) last=Some(10011)
-  canary detected modifications spanning 9752 bytes beyond account-data boundary
-  probe after_resize(-112) would be data_len = 148
+=== sequence: pingpong (176 steps) ===
+  transitions=176 invariant_checks_ok=177 diffs=0
 
-=== PHASE A: full MAX account, Anchor data[8..] +8 overclaim ===
-  probe N_at_rotate        data_len = 10004
-  body.len()=9996 MAX_LEN=10004 overclaim=8
-  [full Anchor cast rotate via production update_tick] account_len=10004
-  dirty past boundary: count=8 first=Some(10004) last=Some(10011)
-  canary detected modifications spanning 8 bytes beyond account-data boundary
+=== sequence: alternate_scramble (264 steps) ===
+  transitions=176 invariant_checks_ok=177 diffs=0
 
-=== DONE ===
+=== sequence: lcg_2k (2000 steps) ===
+  transitions=951 invariant_checks_ok=952 diffs=0
+
+=== sequence: lcg_2k_b (2000 steps) ===
+  transitions=984 invariant_checks_ok=985 diffs=0
+
+=== POLLUTION TRACK: short account + canary → logical body vs reference ===
+  OK  inc_first_tick0 — no logical pollution
+  OK  inc_empty_to_tick0
+  OK  inc_empty_to_tick1
+  OK  inc_empty_to_tick7
+  OK  inc_empty_to_tick44
+  OK  inc_empty_to_tick87
+  OK  dec_tick0_to_empty
+  OK  dec_tick1_to_empty
+  OK  dec_tick7_to_empty
+  OK  dec_tick44_to_empty
+  OK  dec_tick87_to_empty
+  OK  inc_half_tick1
+  OK  inc_half_tick3
+  OK  inc_half_tick15
+  OK  inc_half_tick43
+  OK  inc_half_tick87
+  OK  dec_half_tick0
+  OK  dec_half_tick10
+  OK  dec_half_tick40
+  OK  dec_half_tick86
+  OK  inc_near_full_last
+  OK  dec_full_first
+  OK  dec_full_mid
+  OK  dec_full_last
+  pollution diffs: 0
+
+=== SUMMARY ===
+Semantic track: reference invariants held; reference ≡ production on MAX_LEN backing.
+Pollution track: no logical-body divergence vs reference under tested short-account transitions.
+OOB writes are real (Phase A), but under these cases rotate+serialize+resize left committed packed state intact.
+Next: expand pollution cases; Phase C data-flow; Phase D shared-TA.

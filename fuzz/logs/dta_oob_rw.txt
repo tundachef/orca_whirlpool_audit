@@ -1023,51 +1023,32 @@ help: use `'_` for type paths
     |                                               +++
 
 warning: `whirlpool` (lib) generated 90 warnings (5 duplicates) (run `cargo fix --lib -p whirlpool` to apply 5 suggestions)
-   Compiling dta-canary v0.1.0 (/home/ziion/Documents/solanaProtocols/orca-whirlpool/fuzz/dta_canary)
-    Finished `release` profile [optimized] target(s) in 2.82s
-     Running `target/release/dta_canary`
-dta_canary Phase A — production-path canary
-MIN_LEN=148 MAX_LEN=10004 INIT_LEN=113 UNINIT_LEN=1 DATA_LEN=112
+   Compiling dta-oob-rw v0.1.0 (/home/ziion/Documents/solanaProtocols/orca-whirlpool/fuzz/dta_oob_rw)
+    Finished `release` profile [optimized] target(s) in 2.34s
+     Running `target/release/dta_oob_rw`
+dta_oob_rw — OOB read-after-write (host)
 
-=== Harness fidelity ===
-Component                         Production     Harness
----------------------------------------------------------
-DynamicTickArrayLoader            same           same (whirlpool path dep)
-update_tick                       same           same
-tick_data_mut                     same           same (via update_tick)
-rotate_right/left                 same           same
-account body offset               8              8
-account length (first-tick)       260            260
-resize ordering                   same           same (simulated)
-tick state transition             same           same
-backing allocation                SVM            host+canary  ← only intentional diff
+=== EXP1: rotate OOB write → raw read envelope ===
+  dirty_count=9752 envelope_first_256_changed=true
+  first envelope delta at +Some(0)
+  HOST CHANNEL: yes — OOB write is readable back from the same allocation (case B candidate on host).
 
-=== PHASE A: increase first tick (production update_tick, grow-then-rotate) ===
-  constants: MIN_LEN=148 MAX_LEN=10004 DynamicTickData::LEN=112
-  TICK_ARRAY_SIZE=88
-  probe before_resize      data_len = 148
-  probe after_resize       data_len = 260
-  probe before_load_mut    data_len = 260
-  probe N_at_rotate        data_len = 260  (rotate inside update_tick)
-  body.len()=252 claimed Loader MAX_LEN=10004 overclaim=9752
-  [increase/rotate_right via production update_tick] account_len=260
-  dirty past boundary: count=9752 first=Some(260) last=Some(10011)
-  canary detected modifications spanning 9752 bytes beyond account-data boundary
+=== EXP2: production get_tick after OOB write (all tick idxs) ===
+  No production get_tick returned envelope-influenced Tick values (logical read path clean).
 
-=== PHASE A: decrease last tick (production update_tick, rotate-then-shrink) ===
-  probe N_at_rotate (pre-shrink) data_len = 260
-  probe before_load_mut    data_len = 260
-  probe before_update_tick data_len = 260
-  [decrease/rotate_left via production update_tick] account_len=260
-  dirty past boundary: count=9751 first=Some(260) last=Some(10011)
-  canary detected modifications spanning 9752 bytes beyond account-data boundary
-  probe after_resize(-112) would be data_len = 148
+=== EXP3: form [off..off+113] crossing boundary; Uninit deserialize ===
+  get_tick(0) on MIN empty → Uninitialized (1-byte read); envelope not consumed as fields.
+  get_tick(87) similarly Uninitialized.
 
-=== PHASE A: full MAX account, Anchor data[8..] +8 overclaim ===
-  probe N_at_rotate        data_len = 10004
-  body.len()=9996 MAX_LEN=10004 overclaim=8
-  [full Anchor cast rotate via production update_tick] account_len=10004
-  dirty past boundary: count=8 first=Some(10004) last=Some(10011)
-  canary detected modifications spanning 8 bytes beyond account-data boundary
+=== EXP4: synthetic Initialized deserialize across boundary (invariant-breaking) ===
+  (Not a reachable production state — probes whether envelope bytes CAN feed Borsh.)
+  forged-tag get_tick → initialized=true liquidity_net=0
+  (If net derives from canary/envelope pattern, envelope→program-visible channel exists when invariant broken.)
+  fee_a=0 fee_b=0 (inspect manually vs envelope)
 
-=== DONE ===
+=== RAW VERDICT (host) ===
+  write→raw read envelope: YES (process memory channel).
+  write→production get_tick fields: NO under invariant-holding state.
+  Uninit boundary slice: forms past end, reads 1 in-bounds byte only.
+  Envelope case on host so far: A for committed DEX state; B only as raw memory.
+  SVM may remap envelope (C/D) — Phase E required.

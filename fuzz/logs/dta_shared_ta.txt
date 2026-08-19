@@ -1023,51 +1023,61 @@ help: use `'_` for type paths
     |                                               +++
 
 warning: `whirlpool` (lib) generated 90 warnings (5 duplicates) (run `cargo fix --lib -p whirlpool` to apply 5 suggestions)
-   Compiling dta-canary v0.1.0 (/home/ziion/Documents/solanaProtocols/orca-whirlpool/fuzz/dta_canary)
-    Finished `release` profile [optimized] target(s) in 2.82s
-     Running `target/release/dta_canary`
-dta_canary Phase A — production-path canary
-MIN_LEN=148 MAX_LEN=10004 INIT_LEN=113 UNINIT_LEN=1 DATA_LEN=112
+   Compiling dta-shared-ta v0.1.0 (/home/ziion/Documents/solanaProtocols/orca-whirlpool/fuzz/dta_shared_ta)
+    Finished `release` profile [optimized] target(s) in 3.12s
+     Running `target/release/dta_shared_ta`
+dta_shared_ta Phase D — shared TA control vs experimental (host)
+MIN_LEN=148 MAX_LEN=10004 N=88
 
-=== Harness fidelity ===
-Component                         Production     Harness
----------------------------------------------------------
-DynamicTickArrayLoader            same           same (whirlpool path dep)
-update_tick                       same           same
-tick_data_mut                     same           same (via update_tick)
-rotate_right/left                 same           same
-account body offset               8              8
-account length (first-tick)       260            260
-resize ordering                   same           same (simulated)
-tick state transition             same           same
-backing allocation                SVM            host+canary  ← only intentional diff
+=== SCENARIO: empty→init tick7; victim uses 7 and 20 ===
+  setup account_len=148 bitmap=0x0
+  attacker: idx=7 init=true  victim: lower=7 upper=20
+  attacker changed victim-visible state vs baseline: true (expected for real transition)
+  CONTROL ≡ EXPERIMENTAL — OOB path did not alter victim observables
+  victim.lower.initialized=true liquidity_net=13210 fee_out_a=17871
+  fee_inside=(184467440737095516142129, 368934881474191032297467) liq_after_cross_lower=Ok(986790)
 
-=== PHASE A: increase first tick (production update_tick, grow-then-rotate) ===
-  constants: MIN_LEN=148 MAX_LEN=10004 DynamicTickData::LEN=112
-  TICK_ARRAY_SIZE=88
-  probe before_resize      data_len = 148
-  probe after_resize       data_len = 260
-  probe before_load_mut    data_len = 260
-  probe N_at_rotate        data_len = 260  (rotate inside update_tick)
-  body.len()=252 claimed Loader MAX_LEN=10004 overclaim=9752
-  [increase/rotate_right via production update_tick] account_len=260
-  dirty past boundary: count=9752 first=Some(260) last=Some(10011)
-  canary detected modifications spanning 9752 bytes beyond account-data boundary
+=== SCENARIO: half-pop; attacker inits 15; victim 10..30 ===
+  setup account_len=5076 bitmap=0x5555555555555555555555
+  attacker: idx=15 init=true  victim: lower=10 upper=30
+  attacker changed victim-visible state vs baseline: true (expected for real transition)
+  CONTROL ≡ EXPERIMENTAL — OOB path did not alter victim observables
+  victim.lower.initialized=true liquidity_net=1021 fee_out_a=1380
+  fee_inside=(184467440737095516156780, 368934881474191032315940) liq_after_cross_lower=Ok(998979)
 
-=== PHASE A: decrease last tick (production update_tick, rotate-then-shrink) ===
-  probe N_at_rotate (pre-shrink) data_len = 260
-  probe before_load_mut    data_len = 260
-  probe before_update_tick data_len = 260
-  [decrease/rotate_left via production update_tick] account_len=260
-  dirty past boundary: count=9751 first=Some(260) last=Some(10011)
-  canary detected modifications spanning 9752 bytes beyond account-data boundary
-  probe after_resize(-112) would be data_len = 148
+=== SCENARIO: half-pop; attacker uninits victim lower=10 ===
+  setup account_len=5076 bitmap=0x5555555555555555555555
+  attacker: idx=10 init=false  victim: lower=10 upper=30
+  attacker changed victim-visible state vs baseline: true (expected for real transition)
+  CONTROL ≡ EXPERIMENTAL — OOB path did not alter victim observables
+  victim.lower.initialized=false liquidity_net=0 fee_out_a=0
+  fee_inside=(340282366920938463463374607431768209616, 340282366920938463463374607431768209136) liq_after_cross_lower=Ok(1000000)
 
-=== PHASE A: full MAX account, Anchor data[8..] +8 overclaim ===
-  probe N_at_rotate        data_len = 10004
-  body.len()=9996 MAX_LEN=10004 overclaim=8
-  [full Anchor cast rotate via production update_tick] account_len=10004
-  dirty past boundary: count=8 first=Some(10004) last=Some(10011)
-  canary detected modifications spanning 8 bytes beyond account-data boundary
+=== SCENARIO: near-full; attacker inits last; victim 0..10 ===
+  setup account_len=9892 bitmap=0x7fffffffffffffffffffff
+  attacker: idx=87 init=true  victim: lower=0 upper=10
+  attacker changed victim-visible state vs baseline: true (expected for real transition)
+  CONTROL ≡ EXPERIMENTAL — OOB path did not alter victim observables
+  victim.lower.initialized=true liquidity_net=34001 fee_out_a=46000
+  fee_inside=(184467440737095516067770, 368934881474191032203710) liq_after_cross_lower=Ok(965999)
 
-=== DONE ===
+=== SCENARIO: full; attacker uninits mid=44; victim 40..50 ===
+  setup account_len=10004 bitmap=0xffffffffffffffffffffff
+  attacker: idx=44 init=false  victim: lower=40 upper=50
+  attacker changed victim-visible state vs baseline: true (expected for real transition)
+  CONTROL ≡ EXPERIMENTAL — OOB path did not alter victim observables
+  victim.lower.initialized=true liquidity_net=51681 fee_out_a=69920
+  fee_inside=(184467440737095516019930, 368934881474191032143390) liq_after_cross_lower=Ok(948319)
+
+=== SCENARIO: half-pop; attacker inits 87; victim 2..8 (disjoint) ===
+  setup account_len=5076 bitmap=0x5555555555555555555555
+  attacker: idx=87 init=true  victim: lower=2 upper=8
+  attacker changed victim-visible state vs baseline: true (expected for real transition)
+  CONTROL ≡ EXPERIMENTAL — OOB path did not alter victim observables
+  victim.lower.initialized=true liquidity_net=885 fee_out_a=1196
+  fee_inside=(184467440737095516157470, 368934881474191032316810) liq_after_cross_lower=Ok(999115)
+
+=== PHASE D SUMMARY ===
+All scenarios: CONTROL ≡ EXPERIMENTAL on victim observables (get_tick, fee_inside, cross liquidity, committed body).
+Attacker can change shared TA state (vs baseline), but the short-account OOB path does not produce additional victim-visible divergence beyond the correct transition.
+Next: persistence/atomicity under SVM; P2b boundary deserialize; Phase E envelope.
