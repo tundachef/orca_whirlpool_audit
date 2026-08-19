@@ -1,0 +1,61 @@
+   Compiling dta-canary v0.1.0 (/home/ziion/Documents/solanaProtocols/orca-whirlpool/fuzz/dta_canary)
+warning: unused variable: `body_len`
+   --> src/main.rs:110:9
+    |
+110 |     let body_len = account_len - DISC;
+    |         ^^^^^^^^
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+help: if this is intentional, prefix it with an underscore
+    |
+110 |     let _body_len = account_len - DISC;
+    |         +
+help: you might have meant to pattern match on the similarly named constant `GUARD`
+    |
+110 -     let body_len = account_len - DISC;
+110 +     let GUARD = account_len - DISC;
+    |
+
+warning: constant `TICK_DATA_OFFSET` is never used
+  --> src/main.rs:11:7
+   |
+11 | const TICK_DATA_OFFSET: usize = HEADER; // 52 in body coords / loader without disc... 
+   |       ^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `dta-canary` (bin "dta_canary") generated 2 warnings (run `cargo fix --bin "dta_canary"` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 0.94s
+     Running `target/release/dta_canary`
+MAX_LEN=10004 MIN_LEN=148 size_of::<Loader>()=10004
+align_of::<Loader>()=1
+
+=== EXP A/P2: get_tick slice construction (Layer 2 vs Layer 3) ===
+  Source: `let mut tick_data = &ticks_data[byte_offset..byte_offset + 113];`
+  Then DynamicTick::deserialize(&mut tick_data).
+  Borsh enum: Uninitialized reads 1 byte tag; Initialized reads 113.
+  BUT forming the 113-byte slice indexes the claimed tick_data slice (len=9952).
+  Layer 2: slice construction is in-bounds of CLAIMED len whenever byte_offset+113 <= 9952.
+  Layer 3: actual deserialize READ is 1 byte (uninit) or 113 (init) from that slice.
+  ⇒ P2 rewritten: unconditional 113-byte *slice formation* on claimed extent;
+    not necessarily a 113-byte *physical read* for uninitialized ticks.
+
+=== EXP B/C: rotate_right after +112 (increase path order) ===
+  claimed shift_data.len() = 9952 (type-level)
+  real tick bytes available in account body = 200
+  account_len (with disc) = 260
+  dirty past boundary: count=9752 first=Some(260) last=Some(10011)
+  measured OOB span = 9752 bytes (inclusive)
+
+=== EXP B/C: rotate_left before -112 (decrease path order) ===
+  claimed shift_data.len() = 9952
+  account_len = 260
+  dirty past boundary: count=9752 first=Some(260) last=Some(10011)
+  measured OOB span = 9752 bytes
+
+=== EXP: full MAX account, Anchor data[8..] still +8 overclaim ===
+  body.len()=9996 MAX_LEN=10004 overclaim=8
+  byte_offset=0 claimed_shift_len=9952
+  dirty past boundary: count=8 first=Some(10004) last=Some(10011)
+
+=== DONE ===
